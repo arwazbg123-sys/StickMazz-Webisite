@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔐 MIT License - StickMazz Wiki</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* License Page Specific Styles */
+        :root {
+            --license-primary: #00D4FF;
+            --license-secondary: #A855F7;
+            --license-success: #10B981;
+            --license-warning: #F59E0B;
+            --license-danger: #EF4444;
+        }
+
+        .license-header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--license-primary);
+        }
+
+        .license-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--license-primary), var(--license-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .license-header p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .license-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.1));
+            border: 1px solid var(--license-success);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            color: var(--license-success);
+            font-weight: bold;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .license-content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .license-section {
+            background: rgba(26, 31, 58, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .license-section:hover {
+            border-color: var(--license-primary);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+        }
+
+        .license-section h2 {
+            color: var(--license-primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .license-section h3 {
+            color: var(--license-secondary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .license-section ul, .license-section ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .license-section li {
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .toggle-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .license-section.collapsed .toggle-icon {
+            transform: rotate(-90deg);
+        }
+
+        .license-section-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .license-section.collapsed .license-section-content {
+            max-height: 0;
+        }
+
+        .license-text {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--license-primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin: 1rem 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .copy-btn {
+            background: linear-gradient(135deg, var(--license-primary), var(--license-secondary));
+            border: none;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .copy-btn.copied {
+            background: linear-gradient(135deg, var(--license-success), var(--license-success));
+            animation: copyPulse 0.5s ease;
+        }
+
+        @keyframes copyPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .permission-list, .limitation-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .permission-item, .limitation-item {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--license-success);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .limitation-item {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--license-danger);
+        }
+
+        .permission-item:hover, .limitation-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
+        }
+
+        .permission-item strong, .limitation-item strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .permission-item strong {
+            color: var(--license-success);
+        }
+
+        .limitation-item strong {
+            color: var(--license-danger);
+        }
+
+        .faq-item {
+            background: rgba(26, 31, 58, 0.7);
+            border-left: 3px solid var(--license-secondary);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background: rgba(26, 31, 58, 0.9);
+            border-left-color: var(--license-primary);
+        }
+
+        .faq-question {
+            color: var(--license-primary);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.8);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            margin-top: 1rem;
+        }
+
+        .highlight {
+            background: rgba(0, 212, 255, 0.2);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            color: var(--license-primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--license-primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .license-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(0, 212, 255, 0.05);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 10px;
+        }
+
+        .license-footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        .shield-icon {
+            display: inline-block;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: shieldBounce 2s infinite;
+        }
+
+        @keyframes shieldBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .license-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .permission-list, .limitation-list {
+                grid-template-columns: 1fr;
+            }
+
+            .license-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🔐 MIT LICENSE - StickMazz Wiki</h1>
+        <p class="subtitle">Open Source Protection & Legal Framework</p>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Back Link -->
+        <a href="navigation.html" class="back-link">← Back to Navigation Hub</a>
+
+        <!-- License Header -->
+        <div class="license-header">
+            <div class="shield-icon">🛡️</div>
+            <h1>MIT License</h1>
+            <p>StickMazz Wiki is protected under the MIT License, a permissive open-source license that promotes collaboration and innovation.</p>
+            <div class="license-badge">✓ Officially Licensed</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="license-content">
+
+            <!-- What is MIT License Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    What is MIT License?
+                </h2>
+                <div class="license-section-content">
+                    <p>
+                        The <span class="highlight">MIT License</span> is one of the most popular permissive open-source licenses in the world. It was created by the Massachusetts Institute of Technology and has become a standard for many projects globally.
+                    </p>
+                    <h3>Key Characteristics:</h3>
+                    <ul>
+                        <li><strong>Permissive:</strong> Allows both private and commercial use</li>
+                        <li><strong>Minimal Restrictions:</strong> Few limitations on how you can use the software</li>
+                        <li><strong>Condition-Based:</strong> Requires attribution and includes a liability clause</li>
+                        <li><strong>Legally Binding:</strong> Protects both creator and user with clear terms</li>
+                        <li><strong>Globally Recognized:</strong> Accepted by developers, companies, and legal professionals worldwide</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Permissions Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    ✓ What You Can Do
+                </h2>
+                <div class="license-section-content">
+                    <p>Under the MIT License, users have extensive freedoms to use, modify, and distribute the StickMazz Wiki content:</p>
+                    
+                    <div class="permission-list">
+                        <div class="permission-item">
+                            <strong>✓ Use Commercially</strong>
+                            <p>Use StickMazz Wiki content for commercial purposes and business applications</p>
+                        </div>
+                        <div class="permission-item">
+                            <strong>✓ Modify</strong>
+                            <p>Change, adapt, and improve the content to suit your needs</p>
+                        </div>
+                        <div class="permission-item">
+                            <strong>✓ Distribute</strong>
+                            <p>Share and distribute the original or modified content freely</p>
+                        </div>
+                        <div class="permission-item">
+                            <strong>✓ Private Use</strong>
+                            <p>Use the content privately for personal projects and learning</p>
+                        </div>
+                        <div class="permission-item">
+                            <strong>✓ Sublicense</strong>
+                            <p>Grant licenses of the content to third parties</p>
+                        </div>
+                        <div class="permission-item">
+                            <strong>✓ Include in Larger Works</strong>
+                            <p>Combine with other projects and create derivative works</p>
+                        </div>
+                    </div>
+
+                    <h3>Example Use Cases:</h3>
+                    <ul>
+                        <li>Creating fan games or applications based on StickMazz universe</li>
+                        <li>Publishing educational content using StickMazz lore</li>
+                        <li>Building commercial products featuring StickMazz characters (with attribution)</li>
+                        <li>Creating modified versions of the wiki for different purposes</li>
+                        <li>Educational projects and research using the content</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Limitations Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    ✗ What You Cannot Do
+                </h2>
+                <div class="license-section-content">
+                    <p>While the MIT License is very permissive, there are important limitations to respect:</p>
+                    
+                    <div class="limitation-list">
+                        <div class="limitation-item">
+                            <strong>✗ Hold Liable</strong>
+                            <p>Cannot hold the creator liable for damages or issues</p>
+                        </div>
+                        <div class="limitation-item">
+                            <strong>✗ Claim Ownership</strong>
+                            <p>Cannot claim you created the original StickMazz content</p>
+                        </div>
+                        <div class="limitation-item">
+                            <strong>✗ Remove License</strong>
+                            <p>Must include the original license with distributions</p>
+                        </div>
+                        <div class="limitation-item">
+                            <strong>✗ Trademark Use</strong>
+                            <p>Cannot use trademarks without proper permission</p>
+                        </div>
+                    </div>
+
+                    <h3>Important Restrictions:</h3>
+                    <ul>
+                        <li>You <strong>MUST</strong> provide attribution to the original creator (Naufal MrSov)</li>
+                        <li>You <strong>MUST</strong> include a copy of the MIT License with any distribution</li>
+                        <li>You <strong>MUST</strong> include a notice stating significant changes made</li>
+                        <li>The software is provided "as is" with NO WARRANTY</li>
+                        <li>The creator is NOT LIABLE for any issues or damages arising from use</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Full License Text Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    📄 Full MIT License Text
+                </h2>
+                <div class="license-section-content">
+                    <p>Here is the complete official MIT License text:</p>
+                    
+                    <div class="license-text">MIT License
+
+Copyright (c) 2024 Naufal MrSov - StickMazz Wiki
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</div>
+
+                    <button class="copy-btn" onclick="copyLicenseText()">📋 Copy Full License Text</button>
+                </div>
+            </div>
+
+            <!-- How to Use / Attribution Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    🏷️ How to Provide Attribution
+                </h2>
+                <div class="license-section-content">
+                    <p>When using StickMazz Wiki content, you must provide proper attribution. Here are recommended ways:</p>
+
+                    <h3>In Code or Documentation:</h3>
+                    <div class="license-text">/*
+ * This project uses content from StickMazz Wiki
+ * Licensed under MIT License
+ * Original Creator: Naufal MrSov
+ * License: https://github.com/[username]/StickMazz-Wiki/blob/main/LICENSE
+ */</div>
+
+                    <h3>In README or About Page:</h3>
+                    <div class="license-text">## License
+
+This project includes content from **StickMazz Wiki** (https://github.com/[username]/StickMazz-Wiki)
+Licensed under the MIT License - Original Creator: Naufal MrSov
+
+See LICENSE file for full details.</div>
+
+                    <h3>In Footer or Credits:</h3>
+                    <div class="license-text">StickMazz Wiki © 2024 Naufal MrSov | Licensed under MIT License</div>
+
+                    <p style="margin-top: 1rem; color: rgba(255, 255, 255, 0.8);">
+                        <strong>Best Practice:</strong> Include a link to the original GitHub repository and/or the LICENSE file whenever possible.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Terms & Conditions Explained Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    ⚖️ License Terms Explained
+                </h2>
+                <div class="license-section-content">
+                    <h3>Permission:</h3>
+                    <p>
+                        <span class="highlight">Permission is hereby granted, free of charge</span> means you can use this without paying any fees, forever. There are no hidden costs or restrictions based on commercial vs. personal use.
+                    </p>
+
+                    <h3>Conditions:</h3>
+                    <ul>
+                        <li><strong>Include License & Copyright:</strong> Whenever you distribute the software, you must include the original copyright notice and this license</li>
+                        <li><strong>No Warranty:</strong> The software is given "as-is" with no guarantees about quality, fitness, or performance</li>
+                        <li><strong>No Liability:</strong> The creator cannot be sued for problems caused by the software</li>
+                    </ul>
+
+                    <h3>Rights Protected:</h3>
+                    <ul>
+                        <li><strong>Use:</strong> Run the software for any purpose</li>
+                        <li><strong>Copy:</strong> Make copies for yourself and others</li>
+                        <li><strong>Modify:</strong> Change the code/content to meet your needs</li>
+                        <li><strong>Distribute:</strong> Share copies with others</li>
+                        <li><strong>Sublicense:</strong> Let others use your modifications under the same terms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    ❓ Frequently Asked Questions
+                </h2>
+                <div class="license-section-content">
+                    
+                    <div class="faq-item" onclick="toggleFAQ(this)">
+                        <div class="faq-question">Can I use StickMazz Wiki content commercially?</div>
+                        <div class="faq-answer">
+                            Yes! The MIT License allows commercial use. You can create commercial products, services, or businesses using StickMazz Wiki content. Just remember to provide attribution to Naufal MrSov and include the MIT License notice.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="toggleFAQ(this)">
+                        <div class="faq-question">Do I need to share my modifications?</div>
+                        <div class="faq-answer">
+                            No. Unlike some open-source licenses, MIT doesn't require you to share your modifications. You can modify the content and keep your changes private. However, if you distribute the modified version, you must include the license.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="toggleFAQ(this)">
+                        <div class="faq-question">What if someone creates a derivative work?</div>
+                        <div class="faq-answer">
+                            They must include the original copyright notice and MIT License. They should clearly indicate what changes they made. They can use it commercially and don't need to share their modifications, but must include attribution.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="toggleFAQ(this)">
+                        <div class="faq-question">Can I change the license terms?</div>
+                        <div class="faq-answer">
+                            No. You cannot change the license of the original content. If you distribute unmodified content, it remains MIT Licensed. You can only change the license of your own original additions, but derivative works must still include the original MIT License.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="toggleFAQ(this)">
+                        <div class="faq-question">Is MIT License suitable for commercial projects?</div>
+                        <div class="faq-answer">
+                            Absolutely! MIT License is widely used in commercial projects including large companies. It provides clear legal terms while maintaining permissive use. Many enterprises prefer MIT for its simplicity and legal clarity.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="toggleFAQ(this)">
+                        <div class="faq-question">What about patents and trademarks?</div>
+                        <div class="faq-answer">
+                            MIT License doesn't grant any patent rights or trademark permissions. If you use StickMazz characters or branding, you may need separate permission beyond the MIT License. The license covers the content/code itself.
+                        </div>
+                    </div>
+
+                    <div class="faq-item" onclick="toggleFAQ(this)">
+                        <div class="faq-question">Can I use this for creating games?</div>
+                        <div class="faq-answer">
+                            Yes! You can create games using StickMazz Wiki lore, characters, and assets under the MIT License. Just provide clear attribution to Naufal MrSov and include the license notice in your game's credits or documentation.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- License Comparison Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    🔍 MIT vs Other Licenses
+                </h2>
+                <div class="license-section-content">
+                    <p>How does MIT compare to other popular open-source licenses?</p>
+
+                    <table style="width: 100%; margin-top: 1rem; border-collapse: collapse;">
+                        <tr style="border-bottom: 2px solid rgba(0, 212, 255, 0.3);">
+                            <th style="text-align: left; padding: 0.75rem; color: var(--license-primary);">License</th>
+                            <th style="text-align: center; padding: 0.75rem; color: var(--license-primary);">Commercial Use</th>
+                            <th style="text-align: center; padding: 0.75rem; color: var(--license-primary);">Modify</th>
+                            <th style="text-align: center; padding: 0.75rem; color: var(--license-primary);">Distribute</th>
+                            <th style="text-align: center; padding: 0.75rem; color: var(--license-primary);">Patent Grant</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                            <td style="padding: 0.75rem;"><strong style="color: var(--license-success);">MIT</strong></td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: #999;">-</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                            <td style="padding: 0.75rem;">Apache 2.0</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                            <td style="padding: 0.75rem;">GPL v3</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                            <td style="padding: 0.75rem;">BSD</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: var(--license-success);">✓</td>
+                            <td style="text-align: center; color: #999;">-</td>
+                        </tr>
+                    </table>
+
+                    <p style="margin-top: 1.5rem; color: rgba(255, 255, 255, 0.8);">
+                        <strong>Why MIT for StickMazz?</strong> MIT was chosen because it provides maximum freedom for the community while maintaining clear attribution. It's simple to understand, legally sound, and widely recognized worldwide—perfect for an open-source wiki project.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Resources Section -->
+            <div class="license-section">
+                <h2 onclick="toggleSection(this)">
+                    <span class="toggle-icon">▶</span>
+                    📚 Additional Resources
+                </h2>
+                <div class="license-section-content">
+                    <h3>Official MIT License Resources:</h3>
+                    <ul>
+                        <li><strong>Official MIT License:</strong> Visit <a href="https://opensource.org/licenses/MIT" target="_blank" style="color: var(--license-primary); text-decoration: underline;">opensource.org/licenses/MIT</a></li>
+                        <li><strong>OSI Approved:</strong> MIT License is officially approved by the Open Source Initiative</li>
+                        <li><strong>SPDX Identifier:</strong> Use "MIT" as the SPDX license identifier</li>
+                    </ul>
+
+                    <h3>Related Information:</h3>
+                    <ul>
+                        <li><strong>GitHub License:</strong> <a href="https://github.com/MrSov/StickMazz-Wiki" target="_blank" style="color: var(--license-primary); text-decoration: underline;">View on GitHub</a></li>
+                        <li><strong>Creator:</strong> Naufal MrSov (MrSov) - Original Creator of StickMazz Universe</li>
+                        <li><strong>License Year:</strong> © 2024 All Rights Reserved under MIT License</li>
+                    </ul>
+
+                    <h3>Open Source Community:</h3>
+                    <ul>
+                        <li>StickMazz Wiki is part of the global open-source community</li>
+                        <li>Contributions and forks are welcome and encouraged</li>
+                        <li>Please cite the original source in your derivative works</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="license-footer">
+            <p>
+                🔐 <strong>StickMazz Wiki</strong> is proudly protected under the <strong>MIT License</strong>
+            </p>
+            <p>
+                © 2024 Naufal MrSov | MIT Licensed Project | <a href="https://github.com/MrSov/StickMazz-Wiki" target="_blank" style="color: var(--license-primary); text-decoration: underline;">GitHub Repository</a>
+            </p>
+            <p style="font-size: 0.85rem; margin-top: 1rem;">
+                For questions about this license or usage rights, please refer to the official MIT License or contact the creator.
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactive Features -->
+    <script>
+        // Toggle section expansion
+        function toggleSection(element) {
+            const parent = element.closest('.license-section');
+            parent.classList.toggle('collapsed');
+        }
+
+        // Toggle FAQ items
+        function toggleFAQ(element) {
+            element.classList.toggle('active');
+        }
+
+        // Copy License Text
+        function copyLicenseText() {
+            const licenseText = `MIT License
+
+Copyright (c) 2024 Naufal MrSov - StickMazz Wiki
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.`;
+
+            navigator.clipboard.writeText(licenseText).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                alert('Failed to copy. Please try again.');
+                console.error('Copy failed:', err);
+            });
+        }
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Initialize sections as collapsed
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.license-section');
+            sections.forEach((section, index) => {
+                if (index > 0) {
+                    section.classList.add('collapsed');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
