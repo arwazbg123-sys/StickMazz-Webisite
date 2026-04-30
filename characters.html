@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 Karakter - StickMazz Wiki</title>
+    <link rel="stylesheet" href="wiki-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌀</span>
+                <span class="logo-text">StickMazz Wiki</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active">Karakter ▼</a>
+                    <div class="dropdown-content">
+                        <a href="characters.html">Semua Karakter</a>
+                        <a href="characters.html?type=utama">Karakter Utama</a>
+                        <a href="characters.html?type=bonus">Bonus Characters</a>
+                        <a href="characters.html?type=antagonis">Antagonis</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Dunia ▼</a>
+                    <div class="dropdown-content">
+                        <a href="world.html">Nesyabella</a>
+                        <a href="world.html#zones">Zona & Wilayah</a>
+                        <a href="world.html#lore">Sejarah Dunia</a>
+                        <a href="world.html#organizations">Organisasi</a>
+                    </div>
+                </li>
+                <li><a href="music.html">Musik</a></li>
+                <li class="search-box">
+                    <input type="text" id="globalSearch" placeholder="🔍 Cari..." onkeyup="globalSearch()">
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>🎭 Encyclopedia Karakter</h1>
+        <p>Jelajahi 45+ lokomotif unik dari Nesyabella dengan kepribadian, kekuatan, dan cerita masing-masing</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="typeFilter">Tipe Karakter:</label>
+                    <select id="typeFilter" onchange="filterCharacters()">
+                        <option value="semua">Semua</option>
+                        <option value="utama">Utama (33)</option>
+                        <option value="bonus">Bonus (12+)</option>
+                        <option value="antagonis">Antagonis</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="zoneFilter">Zone:</label>
+                    <select id="zoneFilter" onchange="filterCharacters()">
+                        <option value="semua">Semua Zone</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="vibeFilter">Vibe:</label>
+                    <select id="vibeFilter" onchange="filterCharacters()">
+                        <option value="semua">Semua Vibe</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <button class="btn-reset" onclick="resetFilters()">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character Grid -->
+        <section class="character-grid" id="characterGrid">
+            <!-- Akan diisi oleh JavaScript -->
+        </section>
+
+        <!-- Character Modal -->
+        <div class="modal" id="characterModal">
+            <div class="modal-content character-detail">
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+                <div class="modal-header" id="modalHeader"></div>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>StickMazz Wiki</h4>
+                <p>Encyclopedia komprehensif semesta Nesyabella</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="world.html">Dunia</a></li>
+                    <li><a href="music.html">Musik</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="wiki-database.js"></script>
+    <script src="wiki-characters.js"></script>
+    <script src="wiki-script.js"></script>
+</body>
+</html>
