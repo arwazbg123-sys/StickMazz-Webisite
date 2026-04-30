@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StickMazz Wiki - Dunia Animasi Livedtrain</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>🚂 STICKMAZZ WIKI</h1>
+        <p class="subtitle">Dunia Animasi Livedtrain - Nesyabella</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" onclick="switchTab('overview')" style="flex: 1;">📖 Overview</button>
+        <button class="tab-btn" onclick="switchTab('lokomotif')" style="flex: 1;">🚂 Lokomotif</button>
+        <button class="tab-btn" onclick="switchTab('teknologi')" style="flex: 1;">⚡ Teknologi</button>
+        <button class="tab-btn" onclick="switchTab('hierarki')" style="flex: 1;">👑 Hierarki</button>
+        <button class="tab-btn" onclick="switchTab('antagonis')" style="flex: 1;">👿 Antagonis</button>
+        <a href="navigation.html" class="tab-btn" style="text-decoration: none; flex: 1; background: rgba(255, 0, 110, 0.1); border: 1px solid #ff006e;">➕ Halaman Baru</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="section">
+                <h2>🌍 Dunia StickMazz</h2>
+                <p>
+                    <strong>StickMazz</strong> adalah animasi yang dibuat oleh <strong>Naufal MrSov</strong>, mengisahkan tentang <strong>kereta hidup</strong> yang berada di negara fiksi bernama <strong>Nesyabella</strong>. Setiap lokomotif memiliki <strong>kepribadian seperti manusia</strong>, termasuk emosi, hubungan sosial, dan peran masing-masing dalam dunia ini.
+                </p>
+
+                <div class="info-box">
+                    <div class="info-box-title">💡 Tujuan Animasi</div>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Mengedukasi penonton tentang teknologi ramah lingkungan</li>
+                        <li>Menjadi hiburan bagi berbagai kalangan tanpa batasan usia</li>
+                    </ul>
+                </div>
+
+                <h3>📍 Lokasi & Lingkungan</h3>
+                <p>
+                    Negara <strong>Nesyabella</strong> adalah sebuah negara fiksi yang sangat maju dengan teknologi transportasi terdepan. Lingkungan di sini jarang memiliki pohon karena tanah tercampur dengan radiasi berbahaya. Kota-kotanya memiliki peradaban yang setara dengan kota manusia modern.
+                </p>
+
+                <h3>⏰ Sejarah Nesyabella</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>Tahun Berdiri:</strong> 1946</li>
+                    <li><strong>Keunggulan:</strong> Negara pertama yang menciptakan lokomotif bernyawa</li>
+                    <li><strong>Sistem Transportasi:</strong> Langsung menggunakan lokomotif diesel (tidak melalui fase uap)</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>🚉 PT Kanna & Sistem Transportasi</h2>
+                <p>
+                    <strong>PT Kanna</strong> adalah perusahaan kereta api Nesyabella yang mengatur semua layanan transportasi. Setiap lokomotif memiliki fungsi dan kegunaan masing-masing sesuai dengan keahlian dan sifat mereka.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>🎬 Gaya Komunikasi</h2>
+                <p>
+                    Setiap karakter di StickMazz memiliki gaya bahasa yang unik dan berbeda:
+                </p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🏢</div>
+                        <strong>Formal</strong>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📝</div>
+                        <strong>Normatif</strong>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">😆</div>
+                        <strong>Gaul</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lokomotif Tab -->
+        <div id="lokomotif" class="tab-content">
+            <div class="section">
+                <h2>🚂 Daftar Lokomotif Utama</h2>
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Cari lokomotif...">
+                </div>
+
+                <div class="characters-grid" id="charactersGrid">
+                    <!-- Character cards akan diisi oleh JavaScript -->
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>🇮🇩 Lokomotif dari Indonesia</h2>
+                <p>
+                    Beberapa lokomotif khusus yang berasal dari atau terinspirasi dari Indonesia:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Lokomotif</th>
+                            <th>Jenis</th>
+                            <th>Karakteristik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CC205 Naufal</strong></td>
+                            <td>Babaranjang Sumatra</td>
+                            <td>Lokomotif pendukung yang kuat</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CC206 Thole</strong></td>
+                            <td>Lokomotif Cargo</td>
+                            <td>Kuat dengan kemampuan mengangkut banyak gerbong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CC201 Cici</strong></td>
+                            <td>Lokomotif Penumpang</td>
+                            <td>Imut dan bertenaga untuk penumpang</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CC203 Lina</strong></td>
+                            <td>Lokomotif Pendukung</td>
+                            <td>Ramah, ceria, dan siap membantu</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Teknologi Tab -->
+        <div id="teknologi" class="tab-content">
+            <div class="section">
+                <h2>⚡ Teknologi Ramah Lingkungan</h2>
+                <p>
+                    Semua lokomotif di Nesyabella telah dibekali teknologi <strong>ramah lingkungan</strong> yang canggih. Ini adalah komitmen mereka terhadap keberlanjutan planet:
+                </p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">☀️</div>
+                        <div><strong>Panel Surya</strong></div>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Menggunakan energi matahari</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌬️</div>
+                        <div><strong>Tenaga Angin</strong></div>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Memanfaatkan kecepatan angin</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">♻️</div>
+                        <div><strong>Biogas Sampah</strong></div>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--text-muted);">Daur ulang limbah organik</p>
+                    </div>
+                </div>
+
+                <h3>🚂 Contoh Lokomotif dengan Energi Ramah Lingkungan</h3>
+                <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                    <li><strong>TOC121</strong> → Panel surya (tenaga matahari)</li>
+                    <li><strong>TOC777</strong> → Tenaga angin</li>
+                    <li><strong>TOC211 & TOC206</strong> → Panel surya (tenaga matahari)</li>
+                </ul>
+
+                <h3>🤖 AI & Teknologi Canggih</h3>
+                <p>
+                    Dunia StickMazz juga menampilkan <strong>TOC-AI01</strong>, lokomotif berteknologi AI pertama yang cerdas, efisien, dan full robotik. Dikembangkan oleh ilmuwan <strong>TRY206 (Nitra)</strong>.
+                </p>
+            </div>
+        </div>
+
+        <!-- Hierarki Tab -->
+        <div id="hierarki" class="tab-content">
+            <div class="section">
+                <h2>👑 Hierarki & Kedudukan</h2>
+                <p>
+                    Dalam dunia StickMazz, setiap karakter memiliki tingkatan dan kedudukan seperti dalam sebuah game atau sistem organisasi:
+                </p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tingkat</th>
+                            <th>Nama</th>
+                            <th>Deskripsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tier 1</strong></td>
+                            <td>Operator (Pengatur Dunia)</td>
+                            <td>Pemimpin utama - Naufal & Aurina. Mengontrol jalannya cerita dan dunia.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tier 2</strong></td>
+                            <td>Member (Setengah Admin)</td>
+                            <td>Karakter dengan kewenangan lebih, bisa membuat keputusan penting.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tier 3</strong></td>
+                            <td>Visitor (Penjelajah)</td>
+                            <td>Karakter biasa yang berinteraksi dalam cerita sebagai bagian dari dunia.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>🤝 Hubungan Antar Karakter</h3>
+                <p>
+                    Karena tema utama adalah <strong>Livedtrain (Kereta Hidup)</strong>, setiap kereta memiliki kesadaran seperti manusia. Ini menciptakan berbagai jenis hubungan:
+                </p>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🤝</div>
+                        <strong>Kerja Sama</strong>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚡</div>
+                        <strong>Konflik</strong>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">❤️</div>
+                        <strong>Persahabatan</strong>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏢</div>
+                        <strong>Organisasi Sosial</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Antagonis Tab -->
+        <div id="antagonis" class="tab-content">
+            <div class="section">
+                <h2>👿 Antagonis & Musuh</h2>
+                <p>
+                    Dalam cerita StickMazz, ada beberapa karakter jahat atau antagonis yang menciptakan tantangan bagi para lokomotif baik:
+                </p>
+
+                <div class="characters-grid">
+                    <div class="character-card" onclick="showAntagonisDetail('dr-vortex')">
+                        <div class="char-name">🦹‍♂️ Dr. Vortex</div>
+                        <div class="char-trait">Musuh berbahaya dengan kekuatan destruktif</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Klik untuk detail</p>
+                    </div>
+                    <div class="character-card" onclick="showAntagonisDetail('devinator')">
+                        <div class="char-name">🦹‍♂️ Devinator</div>
+                        <div class="char-trait">Pemberontak dengan rencana jahat</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Klik untuk detail</p>
+                    </div>
+                    <div class="character-card" onclick="showAntagonisDetail('black')">
+                        <div class="char-name">⬛ Black</div>
+                        <div class="char-trait">Muncul kemudian, menggantikan dua tokoh sebelumnya</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">Klik untuk detail</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 3rem;">⚠️ Tantangan & Bahaya</h3>
+                <p>
+                    Beberapa tantangan yang dihadapi karakter StickMazz dalam perjalanan mereka:
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tantangan</th>
+                            <th>Deskripsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>⛰️ <strong>Pegunungan</strong></td>
+                            <td>Bahaya longsor dan medan yang sulit diprediksi</td>
+                        </tr>
+                        <tr>
+                            <td>🌾 <strong>Sawah</strong></td>
+                            <td>Serangan makhluk buas yang melindungi wilayah mereka</td>
+                        </tr>
+                        <tr>
+                            <td>🦹 <strong>Antagonis</strong></td>
+                            <td>Perhadapan dengan musuh yang ingin menghancurkan Nesyabella</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script-new.js"></script>
+</body>
+</html>
