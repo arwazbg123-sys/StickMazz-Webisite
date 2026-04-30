@@ -23,7 +23,7 @@ const bonusCharactersDatabase = [
     vibe: 'Gaul & Genit',
     zone: 'Station',
     status: 'inactive',
-    image: '',
+    image: 'Roona Lokorinas Rise in rails 3.jpg',
     story: `Roona adalah lokomotif perempuan berwarna merah marun dengan telinga seperti kucing dan rambut merah. Dia sangat friendly, banyak bercanda, gaul, dan agak genit. Roona suka banget musik energik terutama rock, dan mahir main gitar listrik. Dia selalu bersama TOC133 Wifilee—mereka sangat aktif, lincah, dan banyak tingkah. Gaya bahasanya catchy dan humoris sebagai tukang bercanda. Kelemahan Roona: dia gampang diculik, dan saat diculik dia langsung lemes membuat penculiknya tambah gemes.`
   },
   {
@@ -34,7 +34,7 @@ const bonusCharactersDatabase = [
     vibe: 'Protektif & Lincah',
     zone: 'Tech Network',
     status: 'active',
-    image: '',
+    image: 'Wifilee the walk Connections (2).jpg',
     story: `WifiLee adalah lokomotif laki-laki berwarna putih dengan antena dan cerobong asap tinggi bergaris. Dia adalah teman setia Roona yang selalu lincah dan protektif. Wifilee tahu bahwa Roona terlalu ramah dan kurang hati-hati, makanya dia lebih protektif meski sama-sama ramah. Kekuatannya adalah singal WiFi yang kuat untuk membuka file besar dengan cepat dan bisa mengubah signal WiFi menjadi virus (digital atau kenyataan). Dia bisa mengendalikan teknologi lewat WiFi (meski masih memakai kabel). Suka musik catchy, rhythmic, hyper, dan ukulele modern.`
   },
   {
@@ -45,14 +45,14 @@ const bonusCharactersDatabase = [
     vibe: 'Pendiam & Petualang',
     zone: 'Desert',
     status: 'active',
-    image: '',
+    image: 'Rosa GunWest With The Sheriff.jpg',
     story: `Rosa adalah lokomotif perempuan berwarna tan coklat muda yang berkategori lorry (kecil). Dia memiliki sifat baik, ramah, jiwa petualang, dan sabar. Rosa adalah "Wandering Trader"—suka berkelana menjual barang-barang (kadang barang sampah, kadang barang langka) di wilayah gurun penuh kaktus. Dia memakai topi koboi berbunga dan membawa pentungan sebagai senjata. Sangat akrab dengan koboi dan sheriff lainnya, tapi cenderung pendiam. Dia adalah petualang sejati yang selalu mencari kesempatan baru.`
   },
   {
     id: 105,
     name: 'Daslenia',
     code: 'TOC151',
-    color: '#C0C0C0',
+    color: '#474545',
     vibe: 'Cantik & Paranoid',
     zone: 'Abandoned Rails',
     status: 'missing',
@@ -67,7 +67,7 @@ const bonusCharactersDatabase = [
     vibe: 'Imut & Misterius',
     zone: 'Dark Places',
     status: 'active',
-    image: '',
+    image: 'Cutes Hekrona In Coples 2.jpg',
     story: `Hekrona adalah lokomotif perempuan pendek, kotak, dengan mata lucu dan warna biru gelap yang sangat mirip tikus. Dia hanya punya 2 ban tumpangan dan 4 ban total. Hekrona sangat pendiam, jarang berinteraksi, dan tidak mudah marah/sedih—ekspresinya biasa saja. Dia adalah karakter lucu yang suka tempat gelap, suka keju, dan lincah. Ada anggapan dia menyembunyikan sesuatu. Kekuatan spesialnya: bisa menyusutkan diri menjadi sangat kecil. Misterius namun menggemaskan.`
   },
   {
@@ -78,18 +78,18 @@ const bonusCharactersDatabase = [
     vibe: 'Misterius & Mistis',
     zone: 'Supernatural',
     status: 'active',
-    image: '',
+    image: 'Mistic Bloodyness Velmouraas.jpg',
     story: `Velmoura adalah lokomotif misterius berwarna merah yang sedikit transparan dengan aksen buram. Dia memakai cincin malaikat di kepala dan seluruh tubuhnya memiliki aksen buram dengan tentakel di bogie (melayang saat bergerak). Dia jarang muncul hanya kepada kelompok/individu tertentu—kemunculannya adalah petanda bahaya. Bersifat misterius, mistis, sedikit humoris, dan supernatural. Suka momen romantis namun percaya diri bisa menakut-nakuti. Paradoks: saat mencoba nakutin antagonis, dia sendiri KO duluan!`
   },
   {
     id: 108,
     name: 'Janny Vers',
     code: 'TOC962',
-    color: '#FFB6D9',
+    color: '#bd447e',
     vibe: 'Nakal & Licik',
     zone: 'Deception',
     status: 'suspended',
-    image: '',
+    image: 'Janny Vers The Beautiful Witchs (2).jpg',
     story: `Janny Vers adalah lokomotif tercantik berwarna pink muda dengan pita kuning, telinga kelinci, dan bogie hitam. Dia adalah antagonis yang licik, nakal, dan pintar manipulasi dengan gaya catchy dan humoris. Janny ahli bersikap baik untuk mencari kelemahan lawan, sangat agresif secara mental (bukan fisik). Mampu mengetahui sifat, ketakutan, dan kelemahan lawan. Bisa menyamar atau berubah bentuk seperti lawan—sangat sulit dibedakan. Ahli meracik ramuan mematikan/penyembuh. Kekuatannya: trik psikologis dan manipulasi emosional (terutama cinta), plus "Love Variant" phase terkuat. Mode bruteforce: sangat lincah, ahli senjata api laras panjang (AK47), dan ramuan Killer Potion.`
   },
   {
@@ -100,27 +100,18 @@ const bonusCharactersDatabase = [
     vibe: 'Ramah & Lucu',
     zone: 'Industry',
     status: 'active',
-    story: `LoveRi (Love + Ri = Cinta Lorry) adalah lokomotif kategori lorry perempuan berwarna merah penuh dengan bogie abu-abu spesial. Detail komponen bogienya sangat detail, realistis, dan keren dibandingkan lokomotif lain. Berperan normal—mengangkut bahan industri kecil. Keistimewaan LoveRi: sangat friendly, ramah, dan baik hati. Dialog lembut dan menggemaskan dengan gaya humoris. Selalu tenang dan menciptakan suasana nyaman. Lokomotif yang menggemaskan dari segi interaksi dan kepribadian.`
-  },
-  {
-    id: 109,
-    name: 'LoveRi',
-    code: 'TOC200',
-    color: '#DC143C',
-    vibe: 'Ramah & Lucu',
-    zone: 'Industry',
-    status: 'active',
+    image: 'Loveri on Somebody.jpg',
     story: `LoveRi (Love + Ri = Cinta Lorry) adalah lokomotif kategori lorry perempuan berwarna merah penuh dengan bogie abu-abu spesial. Detail komponen bogienya sangat detail, realistis, dan keren dibandingkan lokomotif lain. Berperan normal—mengangkut bahan industri kecil. Keistimewaan LoveRi: sangat friendly, ramah, dan baik hati. Dialog lembut dan menggemaskan dengan gaya humoris. Selalu tenang dan menciptakan suasana nyaman. Lokomotif yang menggemaskan dari segi interaksi dan kepribadian.`
   },
   {
     id: 110,
     name: 'Valentena Chroma',
     code: 'TOC944',
-    color: '#8B6F8E',
+    color: '#551182',
     vibe: 'Pendiam & Trauma',
     zone: 'PT Kanna Base',
     status: 'active',
-    image: '',
+    image: 'Valentenas Chroma in station.jpg',
     story: `Valentena adalah lokomotif perempuan bertelinga beruang kecil, warna tubuh lavender dengan aksen garis hijau neon. Dia adalah unggulan PT Kanna untuk tugas-tugas gawat. Biasanya memakai topi pet Kanna. Pendiam, jarang sosialisasi, neurotic (suka nyatir), cukup lucu dengan aura cewek yang asik tapi lembut. Tidak punya kekuatan tambahan tapi pintar analisis. Punya fitur F-AIM dan mesin yang bisa dibuka untuk melihat bagian internal. Punya masa lalu kelam: pernah menjadi istri lokomotif yang kasar, sampai diusir. Trauma itu membuatnya paranoid sama lokomotif laki-laki. (Terinspirasi dari Valentinus Resa).`
   },
   {
@@ -131,7 +122,7 @@ const bonusCharactersDatabase = [
     vibe: 'Trauma & Pemberani',
     zone: 'PT Kanna Advanced',
     status: 'inactive',
-    image: '',
+    image: '  ',
     story: `Federa adalah lokomotif cepat perempuan buatan PT Kanna, dirancang sebagai kereta unggulan Nesyabella. Berbodi kotak dengan ujung aerodinamis, warna hijau khas, dilengkapi fitur canggih seperti ADV (Automatic Drain Valve) dan AeroFloat Cowhanger—yang dia minta setelah serangkaian kecelakaan tragis. Dikenal pendiam, pemurung, penakut, dan menyimpan trauma mendalam. Dijuluki "kereta maut" namun terus maju. Klaksonnya bukan untuk menakuti tapi sebagai peringatan eternal dan permohonan maaf yang tak pernah selesai. Simbol luka yang tetap berjalan—suara hati yang tak pernah benar-benar diam.`
   }
 ];
