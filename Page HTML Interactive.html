@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radio StickMazz</title>
+  <link rel="stylesheet" href="CSS.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">🎧 StickMazz Radio</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#playlist">Playlist</a></li>
+        <li><a href="#karakter">Lagu Karakter</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <h1>Selamat datang di dunia musik StickMazz</h1>
+    <p>Dengarkan lagu-lagu dari rel hidup, zona, dan karakter favoritmu!</p>
+  </section>
+
+  <!-- Pemutar Lagu -->
+  <section class="player">
+    <h2>🎶 Pemutar Lagu</h2>
+    <audio id="player" src="" preload="auto"></audio>
+    <div class="controls">
+      <button id="playBtn">▶️ Putar</button>
+      <button id="pauseBtn">⏸️ Jeda</button>
+      <button id="stopBtn">⏹️ Stop</button>
+    </div>
+    <div class="track-info" id="trackInfo">
+      <p><strong>Judul:</strong> -</p>
+      <p><strong>Karakter:</strong> -</p>
+    </div>
+    <div class="character-photo">
+      <img id="charImage" src="" alt="Foto Karakter" style="max-width: 300px; display: none; margin-top: 10px;" />
+    </div>
+  </section>
+
+  <!-- Audio Latar Belakang -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="Jennifer Lopez On The Floor Lyrics ft Pitbull [music].mp3" type="audio/mpeg" />
+    Browser kamu tidak mendukung audio latar.
+  </audio>
+
+  <!-- Lagu Karakter -->
+<section id="karakter" class="karakter">
+  <h2>🎤 Karakter Karakter</h2>
+  <div class="karakter-list">
+    <div class="karakter-item" 
+         data-src="matahari bersinar.mp3" 
+         data-title="Tenang" 
+         data-char="TOC121" 
+         data-img="TOC121_Rose_Rail_Clinic_.webp">
+      <h3>TOC121 (Rose Rail Cinic)</h3>
+      <p>Lagu: Acive Your Dream</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc777-heroik.mp3" 
+         data-title="Heroik" 
+         data-char="TOC777" 
+         data-img="img/toc777.jpg">
+      <h3>TOC777 (Guardian Spirit)</h3>
+      <p>Lagu: Penggandeng perubahan</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="petalinas.mp3" 
+         data-title="Ceria Gaul" 
+         data-char="TOC211" 
+         data-img="IMG_20250819_000659.jpg">
+      <h3>TOC211 (Petalina Putriona)</h3>
+      <p>Lagu: Petalinas</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="Nitrai.mp3" 
+         data-title="Teknologi & Harapan" 
+         data-char="TRY206" 
+         data-img="TRY206_NitraI..webp">
+      <h3>TRY206 (Nitra Landsri)</h3>
+      <p>Lagu: Nitrai</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc141-gaul-soktahu.mp3" 
+         data-title="Gaul & Sok Tahu" 
+         data-char="TOC141" 
+         data-img="img/toc141.jpg">
+      <h3>TOC141 (Dash)</h3>
+      <p>Lagu: Dash chaotic</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc404-magnetik.mp3" 
+         data-title="Magnetik Penyelamat" 
+         data-char="TOC404" 
+         data-img="img/toc404.jpg">
+      <h3>TOC404 (Semut Besi)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc505-bijak-pelupa.mp3" 
+         data-title="Bijak & Pelupa" 
+         data-char="TOC505" 
+         data-img="img/toc505.jpg">
+      <h3>TOC505 (Velsandra Achdati)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="tockay-kekuatan-komedi.mp3" 
+         data-title="Kekuatan & Komedi" 
+         data-char="TOCAID" 
+         data-img="img/tockay.jpg">
+      <h3>TOCAID (TOCKAY)</h3>
+      <p>Lagu: Kekuatan & Komedi</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="essdot121-mistis.mp3" 
+         data-title="Misterius & Mistis" 
+         data-char="ESSDOT121" 
+         data-img="img/essdot121.jpg">
+      <h3>ESSDOT121</h3>
+      <p>Lagu:tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="vt21-sunyi.mp3" 
+         data-title="Pelindung Sunyi" 
+         data-char="VT21" 
+         data-img="img/vt21.jpg">
+      <h3>VT21</h3>
+      <p>Lagu:tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc343-lemah-tangguh.mp3" 
+         data-title="Lemah Tapi Tangguh" 
+         data-char="TOC343" 
+         data-img="img/toc343.jpg">
+      <h3>TOC343 (Lorry)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="br221-galak-ramah.mp3" 
+         data-title="Galak & Ramah" 
+         data-char="BR221" 
+         data-img="img/br221.jpg">
+      <h3>BR221 (LokoRed)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc999-api-penyelamat.mp3" 
+         data-title="Api & Penyelamatan" 
+         data-char="TOC999" 
+         data-img="img/toc999.jpg">
+      <h3>TOC999 (Blaze)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="aibot-analitik.mp3" 
+         data-title="Analitik & Robotik" 
+         data-char="TOC-AI01" 
+         data-img="img/aibot.jpg">
+      <h3>TOC-AI01 (AIBOT)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc888-petir-semangat.mp3" 
+         data-title="Petir & Semangat" 
+         data-char="TOC888" 
+         data-img="img/toc888.jpg">
+      <h3>TOC888 (Thunder)</h3>
+      <p>Lagu: Rel Elektrik</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc315-tawa.mp3" 
+         data-title="Tawa & Keceriaan" 
+         data-char="TOC315" 
+         data-img="img/toc315.jpg">
+      <h3>TOC315 (Willy Laughter)</h3>
+      <p>Lagu: Tawa & Keceriaan</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc986-pemindai.mp3" 
+         data-title="Pemindai & Cerdas" 
+         data-char="TOC986" 
+         data-img="img/toc986.jpg">
+      <h3>TOC986 (Cyber Sentinel)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc966-strategi.mp3" 
+         data-title="Strategi & Kepemimpinan" 
+         data-char="TOC966" 
+         data-img="img/toc966.jpg">
+      <h3>TOC966 (Rail Girl)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="toc707-ingatan.mp3" 
+         data-title="Ingatan & Kebijaksanaan" 
+         data-char="TOC707" 
+         data-img="img/toc707.jpg">
+      <h3>TOC707 (Mbah Ti)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="cc205-babaranjang.mp3" 
+         data-title="Babaranjang & Semangat Sumatra" 
+         data-char="CC205" 
+         data-img="img/cc205.jpg">
+      <h3>CC205 (Naufal)</h3>
+      <p>Lagu: Babaranjang & Semangat Sumatra</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="cc206-gaul-priuk.mp3" 
+         data-title="Gaul & Tanjung Priuk" 
+         data-char="CC206" 
+         data-img="img/cc206.jpg">
+      <h3>CC206 (Puong)</h3>
+      <p>Lagu: tak mempunyai lagu</p>
+    </div>
+    <div class="karakter-item" 
+         data-src="cc201-cici.mp3" 
+         data-title="Lembut & Raungan Mesin" 
+         data-char="CC201" 
+         data-img="img/cc201.jpg">
+      <h3>CC201 (CICI)</h3>
+      <p>Lagu: Lembut & Raungan Mesin
+      </div>
+        <div class="karakter-item" 
+     data-src="cc201-cici.mp3" 
+     data-title="Lembut & Raungan Mesin" 
+     data-char="CC201" 
+     data-img="img/cc201.jpg">
+  <h3>CC201 (CICI)</h3>
+  <p>Lagu: Lembut & Raungan Mesin</p>
+</div>
+ <div class="karakter-item" 
+         data-src="cc203-lina.mp3" 
+         data-title="RNB & Keimutan" 
+         data-char="CC203" 
+         data-img="img/cc203.jpg">
+      <h3>CC203 (Lina)</h3>
+      <p>Lagu: RNB & Keimutan</p>
+</div>
+</section>
+
+  <!-- Tentang -->
+  <section id="tentang" class="tentang">
+    <h2>ℹ️ Tentang StickMazz Radio</h2>
+    <p>Web ini dibuat untuk merayakan musik dari semesta StickMazz. Semua lagu, karakter, dan zona punya cerita dan emosi tersendiri.</p>
+  </section>
+
+  <!-- Bonus Characters Section -->
+  <section class="bonus-nav" style="text-align: center; padding: 30px 20px; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(168, 85, 247, 0.1)); margin: 30px 0; border-radius: 10px;">
+    <h2 style="margin-bottom: 15px; color: #00D4FF;">✨ Bonus Characters ✨</h2>
+    <p style="margin-bottom: 20px; color: #aaa;">Temui karakter-karakter tambahan yang datang dan pergi di Nesyabella—visitor dan antagonis yang membuat dunia lebih menarik!</p>
+    <a href="Bonus Characters.html" style="display: inline-block; padding: 12px 30px; background: linear-gradient(90deg, #00D4FF, #A855F7); color: #fff; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s ease;" 
+       onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 5px 20px rgba(0, 212, 255, 0.4)';" 
+       onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">🎭 Lihat Bonus Characters →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 StickMazz Radio. Dibuat oleh Naufal 🚄 | Dunia Nesyabella Terus Berkembang</p>
+  </footer>
+
+  <!-- Script Pemutar Lagu Canggih -->
+  <script src="js.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Dunia Nesyabella - StickMazz Wiki</title>
+    <link rel="stylesheet" href="wiki-style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🌀</span>
+                <span class="logo-text">StickMazz Wiki</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li class="dropdown">
+                    <a href="#">Karakter ▼</a>
+                    <div class="dropdown-content">
+                        <a href="characters.html">Semua Karakter</a>
+                        <a href="characters.html?type=utama">Karakter Utama</a>
+                        <a href="characters.html?type=bonus">Bonus Characters</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="active">Dunia ▼</a>
+                    <div class="dropdown-content">
+                        <a href="world.html">Nesyabella</a>
+                        <a href="#zones">Zona & Wilayah</a>
+                        <a href="#lore">Sejarah Dunia</a>
+                        <a href="#luminabella">LuminaBella</a>
+                        <a href="#umbrabella">UmbraBella</a>
+                        <a href="#organizations">Organisasi</a>
+                    </div>
+                </li>
+                <li><a href="music.html">Musik</a></li>
+                <li class="search-box">
+                    <input type="text" id="globalSearch" placeholder="🔍 Cari..." onkeyup="globalSearch()">
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>🌍 Nesyabella - Dunia StickMazz</h1>
+        <p>Jelajahi sistem zona, organisasi, sejarah, dan misteri dunia lokomotif berjiwa</p>
+    </section>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <section class="world-section">
+            <h2>📖 Tentang Nesyabella</h2>
+            <div class="world-overview">
+                <p>Nesyabella adalah dunia yang kompleks dan penuh misteri di mana lokomotif bukan sekadar mesin transportasi, melainkan makhluk hidup dengan jiwa, emosi, dan kekuatan supernatural. Dunia ini dipenuhi zona-zona berbeda, masing-masing dengan karakteristik unik, penghuni legendaris, dan rahasia yang tersembunyi.</p>
+                <p>Dalam Nesyabella, terdapat organisasi-organisasi rahasia, peradaban yang maju, teknologi futuristik, dan lore yang mendalam yang membentuk takdir setiap karakter.</p>
+            </div>
+        </section>
+
+        <!-- Zones Section -->
+        <section class="world-section" id="zones">
+            <h2>🗺️ Zona & Wilayah</h2>
+            <div class="zones-grid" id="zonesGrid">
+                <!-- Akan diisi oleh JavaScript -->
+            </div>
+        </section>
+
+        <!-- Lore Timeline -->
+        <section class="world-section" id="lore">
+            <h2>⏰ Sejarah & Timeline</h2>
+            <div class="lore-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Era Awal - Penciptaan</h3>
+                        <p>Dunia Nesyabella diciptakan dengan teknologi canggih yang memberikan jiwa pada lokomotif. Ini adalah momen fondasi ketika makhluk pertama lahir.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Era Perkembangan</h3>
+                        <p>Berbagai organisasi terbentuk (PT Kanna, TOV, dll). Zona-zona dikembangkan untuk tujuan spesifik. Karakter-karakter utama mulai bermunculan.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Era Konflik</h3>
+                        <p>Berbagai konflik antar karakter dan organisasi mulai muncul. Antagonis seperti Black dan Janny Vers menampakkan eksistensi mereka.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Era Sekarang (Present)</h3>
+                        <p>Dunia Nesyabella terus berkembang. Visitor dan karakter bonus datang dan pergi. Cerita berlanjut dan terus dibangun.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizations Section -->
+        <section class="world-section" id="organizations">
+            <h2>🏢 Organisasi & Fraksi</h2>
+            <div class="organizations-grid">
+                <div class="org-card">
+                    <h3>🏭 PT Kanna</h3>
+                    <p><strong>Type:</strong> Perusahaan Teknologi</p>
+                    <p>Manufaktur terkemuka di Nesyabella yang menciptakan lokomotif berteknologi tinggi. Produsen dari Aurina (ST100) dan Valentena Chroma (TOC944).</p>
+                    <div class="org-tag">Teknologi Maju</div>
+                </div>
+                <div class="org-card">
+                    <h3>📋 TOV (Team Of Vorce)</h3>
+                    <p><strong>Type:</strong> Organisasi Rahasia</p>
+                    <p>Organisasi keamanan rahasia pengatur keamanan di Nesyabella. Mereka menciptakan dan merekrut lokomotif penjaga seperti Crono dan sistem pertahanan canggih.</p>
+                    <div class="org-tag">Keamanan & Intelijen</div>
+                </div>
+                <div class="org-card">
+                    <h3>👑 Guardian Spirit Alliance</h3>
+                    <p><strong>Type:</strong> Aliansi Penjaga</p>
+                    <p>Kelompok heroik yang dipimpin oleh Guardian Spirit (TOC777). Mereka melindungi Nesyabella dari ancaman internal dan eksternal.</p>
+                    <div class="org-tag">Heroik & Protektif</div>
+                </div>
+                <div class="org-card">
+                    <h3>🌑 Phase H Influence</h3>
+                    <p><strong>Type:</strong> Kekuatan Chaotic</p>
+                    <p>Pengaruh ilmu hitam yang dibawa oleh Black (CTC 1). Merupakan ancaman potensial yang bisa mengubah seluruh kesadaran karakter di Nesyabella.</p>
+                    <div class="org-tag">Ancaman & Chaos</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology System -->
+        <section class="world-section">
+            <h2>⚙️ Sistem Teknologi & Kemampuan</h2>
+            <div class="tech-system">
+                <div class="tech-card">
+                    <h3>🔋 Tipe Energi</h3>
+                    <ul>
+                        <li>Bahan Bakar Cair (BBC)</li>
+                        <li>Tenaga Surya</li>
+                        <li>Teknologi Maglev</li>
+                        <li>Radiasi Kristal</li>
+                        <li>Tenaga Suhu Dingin</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>💪 Kategori Kekuatan</h3>
+                    <ul>
+                        <li>Supernatural (Portal, Teleportasi)</li>
+                        <li>Elemental (Api, Es, Petir)</li>
+                        <li>Teknologi (WiFi, GPS, Network)</li>
+                        <li>Biologi (Tanaman, Manipulasi)</li>
+                        <li>Psikologi (Ilmu Hitam, Emosi)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>🏗️ Klasifikasi Lokomotif</h3>
+                    <ul>
+                        <li>Aerodinamis (Cepat, Streamline)</li>
+                        <li>Kotak (Utilitas, Balanced)</li>
+                        <li>Lorry (Kecil, Agile)</li>
+                        <li>Uap (Tradisional, Powerful)</li>
+                        <li>Spesial (Modifikasi unik)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lore Deep Dive -->
+        <section class="world-section">
+            <h2>🔍 Deep Lore Connections</h2>
+            <div class="lore-depth">
+                <div class="lore-box">
+                    <h3>Kutukan Glaceria</h3>
+                    <p>Glaceria memiliki kisah kelam—hidupnya selalu terkena sial dan situasi berbahaya. Dia mengkoleksi emblem keberuntungan untuk melemahkan kutukan tersebut, tapi belum menemukan satu pun yang cocok.</p>
+                </div>
+                <div class="lore-box">
+                    <h3>Masa Lalu Gelap Federa</h3>
+                    <p>Federa menyimpan trauma mendalam akibat serangkaian kecelakaan tragis. Dijuluki "kereta maut", klaksonnya adalah permohonan maaf eternal yang tak pernah selesai.</p>
+                </div>
+                <div class="lore-box">
+                    <h3>Kepribadian Ganda Black</h3>
+                    <p>Black memiliki 2 kepribadian—jahat dan baik. Dalam mode baik, dia tetap menyelipkan kata-kata intimidasi halus. Topinya yang misterius dapat menginfeksi lokomotif dengan ilmu hitam.</p>
+                </div>
+                <div class="lore-box">
+                    <h3>Manipulasi Janny Vers</h3>
+                    <p>Janny Vers adalah manipulator sejati yang bisa menyamar menjadi siapa saja. Phase Love-nya adalah kekuatan terkuat—emosional adalah senjata paling ampuh.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- LuminaBella Section -->
+        <section class="world-section" id="luminabella">
+            <h2>✨ LuminaBella - Dunia Cahaya</h2>
+            <div class="alternate-realm">
+                <p><strong>Tipe:</strong> Dunia Alternatif / Realm Spiritual Positif</p>
+                <p><strong>Pendamping:</strong> MR Surya (Matahari)</p>
+                <p>LuminaBella adalah dunia batin/jiwa yang mencerminkan sisi terang, kebaikan, dan harapan para lokomotif dari Nesyabella. 
+                Di sini, cahaya terang menguasai segalanya, dan setiap sudut dipenuhi dengan kedamaian serta kebahagiaan yang mendalam.</p>
+                
+                <div class="realm-features">
+                    <h3>🌟 Karakteristik Dunia</h3>
+                    <ul>
+                        <li><strong>Lingkungan:</strong> Cahaya terang, Awan Bersinar, Taman Bunga Mekar, Air Terjun Kristal</li>
+                        <li><strong>Suasana:</strong> Kedamaian penuh, Tanpa konflik, Keselamatan abadi</li>
+                        <li><strong>Musik:</strong> Melodi lembut yang menyegarkan dan menenangkan</li>
+                        <li><strong>Populasi:</strong> ~17+ karakter (Versi Terang dari Nesyabella)</li>
+                    </ul>
+                </div>
+
+                <div class="realm-residents">
+                    <h3>👥 Penduduk LuminaBella (16+ Karakter Cahaya)</h3>
+                    <p><small>Klik tombol di bawah untuk melihat daftar lengkap penduduk LuminaBella dan versi terang mereka.</small></p>
+                    <button onclick="displayLuminaBella()" class="world-button">📖 Lihat Semua Penduduk LuminaBella</button>
+                    <div id="luminaBellaContent" style="margin-top: 20px;"></div>
+                </div>
+
+                <div class="realm-status">
+                    <h3>📍 Status Saat Ini</h3>
+                    <p>LuminaBella masih sangat sepi dan hanya dihuni oleh 3 Penjaga Pertama StickMazz: <strong>Pak Haji, HeroCildcar, dan Jevinator (Sang Bedadari)</strong>. 
+                    Mereka menunggu kedatangan lebih banyak karakter yang telah mencapai ketenangan spiritual mereka.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- UmbraBella Section -->
+        <section class="world-section" id="umbrabella">
+            <h2>🌑 UmbraBella - Dunia Bayangan</h2>
+            <div class="alternate-realm">
+                <p><strong>Tipe:</strong> Dunia Alternatif / Realm Spiritual Kompleks</p>
+                <p>UmbraBella adalah dunia bayangan—sisi gelap dan kompleks dari Nesyabella. 
+                Di sini, intrik, pertarungan, dan pertarakan adalah bagian dari kehidupan sehari-hari. 
+                Ini adalah tempat di mana ambisi, kekuatan, dan strategi saling berjumpa.</p>
+                
+                <div class="realm-features">
+                    <h3>⚫ Karakteristik Dunia</h3>
+                    <ul>
+                        <li><strong>Suasana:</strong> Gelap, Misterius, Penuh Intrik</li>
+                        <li><strong>Tema:</strong> Pertarungan Ideologi, Pencurian, Perebutan Kekuasaan</li>
+                        <li><strong>Faksi Utama:</strong> Crimson Nexus (Keamanan) vs Bloodstrike Crew (Perompak)</li>
+                        <li><strong>Episode Utama:</strong> Pertarungan di Markas Crimson Nexus</li>
+                    </ul>
+                </div>
+
+                <div class="realm-factions">
+                    <h3>⚔️ Faksi Utama UmbraBella</h3>
+                    
+                    <div class="faction-details">
+                        <h4>🏢 Crimson Nexus</h4>
+                        <ul>
+                            <li><strong>Tipe:</strong> Markas Keamanan / Organisasi Keamanan Strategis</li>
+                            <li><strong>Pemimpin:</strong> Komandan Phatner</li>
+                            <li><strong>Tim Inti:</strong> Leli, Rayna, Jasmine, Naufal_mrsov, Gearsmith, Flame Rider</li>
+                            <li><strong>Peran:</strong> Penjaga Keamanan, Pertahanan Militer</li>
+                            <li><strong>Karakteristik:</strong> Profesional, Teknologi Canggih, Terstruktur</li>
+                        </ul>
+                    </div>
+
+                    <div class="faction-details">
+                        <h4>☠️ Bloodstrike Crew</h4>
+                        <ul>
+                            <li><strong>Tipe:</strong> Perompak / Penjelajah Malam</li>
+                            <li><strong>Pemimpin:</strong> Kapten Bloodstrike</li>
+                            <li><strong>Taktik:</strong> Pencurian Artefak, Strategi Absurd & Chaotic</li>
+                            <li><strong>Karakteristik:</strong> Kreatif, Humoris, Tidak terduga, Berbahaya</li>
+                            <li><strong>Spesialisasi:</strong> Menggunakan barang random sebagai senjata dengan efektivitas tinggi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="realm-episode">
+                    <h3>📺 Episode Utama: Pertarungan Crimson Nexus vs Bloodstrike</h3>
+                    <p><strong>Judul:</strong> "Markas Kejebolan - Serangan Bloodstrike"</p>
+                    <p><strong>Setting:</strong> Dalam markas rahasia Crimson Nexus, penuh dengan lorong-lorong berlapis dan artefak berharga.</p>
+                    <p><strong>Plot:</strong> Bloodstrike dan awaknya menyerbu Crimson Nexus untuk mencuri artefak strategis. 
+                    Pertarungan dimulai dengan serius namun berubah menjadi absurditas penuh—duel pedang dengan TV, pertempuran dengan pot tanaman, 
+                    kejar-kejaran melintasi lorong dengan baygon meledak, dan banyak lagi.</p>
+                    
+                    <button onclick="displayEpisodeDetail()" class="world-button">📖 Baca Detil Episode Lengkap</button>
+                    <div id="episodeContent" style="margin-top: 20px;"></div>
+                </div>
+
+                <div class="realm-conflict">
+                    <h3>⚡ Dinamika Konflik</h3>
+                    <ul>
+                        <li><strong>Pertarungan Memiliki Gaya Unik:</strong> Kombinasi aksi serius dengan dark comedy/slapstick</li>
+                        <li><strong>Tidak Ada Penyelesaian Pasti:</strong> Pertarungan berlanjut dalam jangka panjang dengan dinamika evolusi</li>
+                        <li><strong>Setiap Karakter Punya Signature Move:</strong> Komandan (Revoler + Tongkat), Flame Rider (Api), Gearsmith (Drone), dsb</li>
+                        <li><strong>Tanda Peringatan Bloodstrike:</strong> Kemunculannya di UmbraBella menandakan chaos dan pengacauan status quo</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparative Realms -->
+        <section class="world-section">
+            <h2>🔄 Perbandingan Realm: Nesyabella vs LuminaBella vs UmbraBella</h2>
+            <div class="realm-comparison">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspek</th>
+                            <th>Nesyabella (Utama)</th>
+                            <th>LuminaBella (Cahaya)</th>
+                            <th>UmbraBella (Bayangan)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Suasana</strong></td>
+                            <td>Seimbang, Kompleks</td>
+                            <td>Cerah, Damai</td>
+                            <td>Gelap, Kacau</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tema Utama</strong></td>
+                            <td>Pertumbuhan & Perjalanan</td>
+                            <td>Harapan & Kedamaian</td>
+                            <td>Ambisi & Pertarungan</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Populasi</strong></td>
+                            <td>43+ Karakter</td>
+                            <td>~17+ Karakter (Versi Cahaya)</td>
+                            <td>Banyak (Versi Kompleks)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Energi Dominan</strong></td>
+                            <td>Campuran</td>
+                            <td>Cahaya Terang</td>
+                            <td>Bayangan Gelap</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peran Strategis</strong></td>
+                            <td>Pusat Utama</td>
+                            <td>Spiritual Aspirasi</td>
+                            <td>Test Karakter & Pertentangan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>StickMazz Wiki</h4>
+                <p>Dunia Nesyabella yang terus berkembang</p>
+            </div>
+            <div class="footer-section">
+                <h4>Sections</h4>
+                <ul>
+                    <li><a href="#zones">Zona</a></li>
+                    <li><a href="#lore">Lore</a></li>
+                    <li><a href="#organizations">Organisasi</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="wiki-database.js"></script>
+    <script src="lore-content.js"></script>
+    <script src="wiki-world.js"></script>
+    <script src="wiki-script.js"></script>
+</body>
+</html>

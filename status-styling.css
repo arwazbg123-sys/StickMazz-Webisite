@@ -1,0 +1,119 @@
+/* Status Badge Styling */
+.status-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-normal {
+    background: rgba(0, 217, 255, 0.8);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
+}
+
+.status-inactive {
+    background: rgba(255, 165, 0, 0.8);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+    animation: pulse-inactive 2s infinite;
+}
+
+.status-suspended {
+    background: rgba(255, 60, 60, 0.8);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 60, 60, 0.4);
+    animation: pulse-suspended 2s infinite;
+}
+
+.status-icon {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.status-text {
+    font-size: 0.8rem;
+}
+
+/* Character Card Status Effects */
+.character-card.status-normal {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.character-card.status-inactive {
+    opacity: 0.7;
+    filter: grayscale(30%);
+}
+
+.character-card.status-inactive:hover {
+    opacity: 0.85;
+    filter: grayscale(20%);
+}
+
+.character-card.status-suspended {
+    opacity: 0.5;
+    filter: grayscale(70%) brightness(0.8);
+    pointer-events: none;
+    position: relative;
+    border: 2px solid rgba(255, 60, 60, 0.5);
+}
+
+.character-card.status-suspended::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 60, 60, 0.1) 10px,
+        rgba(255, 60, 60, 0.1) 20px
+    );
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes pulse-inactive {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 165, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 165, 0, 0.7);
+    }
+}
+
+@keyframes pulse-suspended {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 60, 60, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 60, 60, 0.7);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .status-badge {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .status-icon {
+        font-size: 0.9rem;
+    }
+}

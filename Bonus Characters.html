@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌀 StickMazz - Bonus Characters (Visitor)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(90deg, #00D4FF 0%, #A855F7 100%);
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #00D4FF;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #A855F7;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .bonus-card {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(168, 85, 247, 0.1));
+            border: 2px solid;
+            border-radius: 12px;
+            padding: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            min-height: auto;
+        }
+
+        .bonus-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .bonus-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Status: Inactive (Frozen/Membeku) */
+        .bonus-card.status-inactive {
+            border-color: #4A9ECC;
+            background: linear-gradient(135deg, rgba(74, 158, 204, 0.15), rgba(168, 85, 247, 0.05));
+            opacity: 0.8;
+            filter: saturate(0.7) brightness(0.9);
+            animation: frozenPulse 3s ease-in-out infinite;
+        }
+
+        .bonus-card.status-inactive::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(74, 158, 204, 0.1) 10px,
+                rgba(74, 158, 204, 0.1) 20px
+            );
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 12px;
+        }
+
+        @keyframes frozenPulse {
+            0%, 100% {
+                filter: saturate(0.7) brightness(0.9);
+                opacity: 0.8;
+            }
+            50% {
+                filter: saturate(0.5) brightness(0.8);
+                opacity: 0.7;
+            }
+        }
+
+        /* Status: Suspended (Penjara) */
+        .bonus-card.status-suspended {
+            border-color: #FF6B9D;
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.15), rgba(168, 85, 247, 0.05));
+            box-shadow: inset 0 0 20px rgba(255, 107, 157, 0.2), 0 4px 15px rgba(255, 107, 157, 0.2);
+            animation: prisonWarning 0.4s infinite;
+        }
+
+        .bonus-card.status-suspended::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 6px,
+                rgba(255, 107, 157, 0.5) 6px,
+                rgba(255, 107, 157, 0.5) 8px
+            ),
+            repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 6px,
+                rgba(255, 107, 157, 0.3) 6px,
+                rgba(255, 107, 157, 0.3) 8px
+            );
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 12px;
+        }
+
+        @keyframes prisonWarning {
+            0%, 100% {
+                box-shadow: inset 0 0 20px rgba(255, 107, 157, 0.2), 0 4px 15px rgba(255, 107, 157, 0.2);
+            }
+            50% {
+                box-shadow: inset 0 0 30px rgba(255, 107, 157, 0.4), 0 6px 25px rgba(255, 107, 157, 0.4);
+            }
+        }
+
+        /* Status: Missing (Melankolis) */
+        .bonus-card.status-missing {
+            border-color: #C8A6E6;
+            border-style: dashed;
+            background: linear-gradient(135deg, rgba(200, 166, 230, 0.1), rgba(168, 85, 247, 0.05));
+            opacity: 0.6;
+            filter: saturate(0.4) brightness(0.85);
+            animation: melancholicFade 4s ease-in-out infinite;
+        }
+
+        .bonus-card.status-missing::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(200, 166, 230, 0.1), transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(168, 85, 247, 0.1), transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 12px;
+            animation: mistyFlow 5s infinite;
+        }
+
+        @keyframes melancholicFade {
+            0%, 100% {
+                opacity: 0.6;
+                filter: saturate(0.4) brightness(0.85);
+            }
+            50% {
+                opacity: 0.4;
+                filter: saturate(0.2) brightness(0.75);
+            }
+        }
+
+        @keyframes mistyFlow {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-8px) scale(1.05);
+                opacity: 0.2;
+            }
+        }
+
+        .bonus-card-header {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 0;
+            position: relative;
+            z-index: 2;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .bonus-code {
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(0, 212, 255, 0.2);
+            color: #00D4FF;
+            font-weight: bold;
+        }
+
+        .bonus-badge {
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background: #A855F7;
+            color: #fff;
+            font-weight: bold;
+            width: fit-content;
+            position: relative;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            backdrop-filter: blur(8px);
+        }
+
+        /* Badge Status Inactive */
+        .bonus-badge.status-inactive {
+            background: linear-gradient(135deg, rgba(74, 158, 204, 0.8), rgba(52, 152, 219, 0.7)) !important;
+            border: 1px solid rgba(74, 158, 204, 0.6);
+            box-shadow: 0 0 15px rgba(74, 158, 204, 0.4), inset 0 0 10px rgba(74, 158, 204, 0.2);
+            animation: inactiveGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes inactiveGlow {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(74, 158, 204, 0.4), inset 0 0 10px rgba(74, 158, 204, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(74, 158, 204, 0.6), inset 0 0 15px rgba(74, 158, 204, 0.3);
+            }
+        }
+
+        /* Badge Status Suspended */
+        .bonus-badge.status-suspended {
+            background: linear-gradient(45deg, rgba(255, 107, 157, 0.9), rgba(255, 60, 120, 0.8), rgba(255, 107, 157, 0.9)) !important;
+            background-size: 200% 200%;
+            border: 2px solid rgba(255, 107, 157, 0.8);
+            box-shadow: 
+                0 0 20px rgba(255, 107, 157, 0.8),
+                0 0 40px rgba(255, 107, 157, 0.5),
+                inset 0 0 15px rgba(255, 107, 157, 0.3);
+            animation: suspendedWarning 0.3s infinite, suspendedGlow 0.5s infinite;
+            transform: scale(1);
+        }
+
+        @keyframes suspendedWarning {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        @keyframes suspendedGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 20px rgba(255, 107, 157, 0.8),
+                    0 0 40px rgba(255, 107, 157, 0.5),
+                    inset 0 0 15px rgba(255, 107, 157, 0.3);
+            }
+            50% {
+                box-shadow: 
+                    0 0 35px rgba(255, 107, 157, 1),
+                    0 0 70px rgba(255, 107, 157, 0.7),
+                    inset 0 0 25px rgba(255, 107, 157, 0.5);
+            }
+        }
+
+        /* Badge Status Missing */
+        .bonus-badge.status-missing {
+            background: linear-gradient(135deg, rgba(200, 166, 230, 0.7), rgba(168, 120, 200, 0.6)) !important;
+            border: 1px dashed rgba(200, 166, 230, 0.6);
+            box-shadow: 0 0 20px rgba(200, 166, 230, 0.3), inset 0 0 10px rgba(200, 166, 230, 0.2);
+            animation: missingFade 3s ease-in-out infinite;
+            opacity: 0.75;
+        }
+
+        @keyframes missingFade {
+            0%, 100% {
+                opacity: 0.75;
+                box-shadow: 0 0 20px rgba(200, 166, 230, 0.3), inset 0 0 10px rgba(200, 166, 230, 0.2);
+            }
+            50% {
+                opacity: 0.5;
+                box-shadow: 0 0 30px rgba(200, 166, 230, 0.4), inset 0 0 15px rgba(200, 166, 230, 0.1);
+            }
+        }
+
+        .bonus-character-name {
+            font-size: 1.3rem;
+            color: #fff;
+            margin: 0;
+            font-weight: bold;
+            word-wrap: break-word;
+            line-height: 1.3;
+        }
+
+        .char-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin: 0;
+            margin-bottom: 0.3rem;
+            word-break: break-word;
+            position: relative;
+            z-index: 2;
+            line-height: 1.2;
+        }
+
+        .char-gender {
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+            color: #FFD60A;
+            line-height: 1.2;
+        }
+
+        .char-trait {
+            font-size: 0.85rem;
+            margin: 0.4rem 0;
+            line-height: 1.35;
+            position: relative;
+            z-index: 2;
+            color: #aaa;
+        }
+
+        .char-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            padding: 1rem;
+        }
+
+        .bonus-jp-name {
+            font-size: 0.9rem;
+            color: #00D4FF;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .bonus-vibe {
+            font-size: 0.9rem;
+            color: #FFD60A;
+            margin-bottom: 0.6rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .bonus-story {
+            font-size: 0.8rem;
+            color: #aaa;
+            line-height: 1.35;
+            margin-bottom: 0.8rem;
+            flex-grow: 1;
+        }
+
+        .bonus-zone {
+            font-size: 0.75rem;
+            color: #888;
+            padding-top: 0.8rem;
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bonus-zone span {
+            background: rgba(168, 85, 247, 0.3);
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+        }
+
+        /* Modal untuk detail karakter */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #00D4FF;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 900px;
+            width: 90%;
+            margin: 20px auto;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            animation: slideIn 0.3s ease;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #A855F7;
+        }
+
+        .modal-header h2 {
+            color: #00D4FF;
+            font-size: 1.8rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #00D4FF;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .close-btn:hover {
+            color: #FF6B9D;
+            transform: scale(1.2);
+        }
+
+        .modal-body {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        #modalCharDetail > div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .modal-body strong {
+            color: #00D4FF;
+        }
+
+        .status-badge-modal {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 5px;
+            backdrop-filter: blur(8px);
+        }
+
+        .status-badge-modal.status-active {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00D4FF;
+            border: 1px solid rgba(0, 212, 255, 0.5);
+        }
+
+        .status-badge-modal.status-inactive {
+            background: linear-gradient(135deg, rgba(74, 158, 204, 0.8), rgba(52, 152, 219, 0.7));
+            color: #E0F7FF;
+            border: 1px solid rgba(74, 158, 204, 0.6);
+            box-shadow: 0 0 15px rgba(74, 158, 204, 0.4), inset 0 0 10px rgba(74, 158, 204, 0.2);
+            animation: inactiveGlow 2s ease-in-out infinite;
+        }
+
+        .status-badge-modal.status-suspended {
+            background: linear-gradient(45deg, rgba(255, 107, 157, 0.9), rgba(255, 60, 120, 0.8), rgba(255, 107, 157, 0.9));
+            background-size: 200% 200%;
+            color: #FFEBF0;
+            border: 2px solid rgba(255, 107, 157, 0.8);
+            box-shadow: 
+                0 0 20px rgba(255, 107, 157, 0.8),
+                0 0 40px rgba(255, 107, 157, 0.5),
+                inset 0 0 15px rgba(255, 107, 157, 0.3);
+            animation: suspendedWarning 0.3s infinite, suspendedGlow 0.5s infinite;
+        }
+
+        .status-badge-modal.status-missing {
+            background: linear-gradient(135deg, rgba(200, 166, 230, 0.7), rgba(168, 120, 200, 0.6));
+            color: #E6D9F7;
+            border: 1px dashed rgba(200, 166, 230, 0.6);
+            box-shadow: 0 0 20px rgba(200, 166, 230, 0.3), inset 0 0 10px rgba(200, 166, 230, 0.2);
+            animation: missingFade 3s ease-in-out infinite;
+            opacity: 0.85;
+        }
+
+        /* Status badge */
+        .status-planning {
+            display: inline-block;
+            background: #FF6B9D;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .status-active {
+            display: inline-block;
+            background: #29FF5C;
+            color: #000;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .melancholic-fade-bonus {
+            display: inline-block;
+            animation: melancholicFadeInOut 3s ease-in-out infinite;
+            color: rgba(200, 170, 230, 0.9);
+            text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
+        }
+
+        .missing-text-bonus {
+            animation: missingTextFade 4s ease-in-out infinite;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        @keyframes melancholicFadeInOut {
+            0%, 100% { 
+                opacity: 0.4;
+                text-shadow: 0 2px 5px rgba(168, 85, 247, 0.2);
+            }
+            50% { 
+                opacity: 1;
+                text-shadow: 0 2px 20px rgba(168, 85, 247, 0.5);
+            }
+        }
+
+        @keyframes missingTextFade {
+            0%, 100% { 
+                opacity: 0.7;
+                filter: blur(0);
+            }
+            50% { 
+                opacity: 0.5;
+                filter: blur(0.3px);
+            }
+        }
+
+        /* Char Info Content Z-Index Fix */
+        .bonus-card.status-inactive .char-info,
+        .bonus-card.status-suspended .char-info,
+        .bonus-card.status-missing .char-info,
+        .bonus-card.status-inactive .bonus-card-header,
+        .bonus-card.status-suspended .bonus-card-header,
+        .bonus-card.status-missing .bonus-card-header {
+            position: relative;
+            z-index: 3;
+        }
+
+        .bonus-card.status-missing .char-name {
+            color: rgba(200, 166, 230, 0.9) !important;
+            opacity: 0.8;
+            animation: missingNameFade 3s ease-in-out infinite;
+        }
+
+        @keyframes missingNameFade {
+            0%, 100% {
+                opacity: 0.8;
+                text-shadow: 0 0 10px rgba(200, 166, 230, 0.2);
+            }
+            50% {
+                opacity: 0.5;
+                text-shadow: 0 0 5px rgba(200, 166, 230, 0.1);
+            }
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .nav-button {
+            background: linear-gradient(90deg, #00D4FF 0%, #A855F7 100%);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+        }
+
+        /* Modal Status Styling */
+        .modal.modal-missing-bonus {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(40, 30, 80, 0.5));
+        }
+
+        .modal.modal-missing-bonus .modal-content {
+            border: 2px dashed rgba(168, 85, 247, 0.5);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), inset 0 0 20px rgba(168, 85, 247, 0.08);
+        }
+
+        .modal.modal-suspended-bonus .modal-content {
+            border: 2px solid rgba(255, 107, 157, 0.5);
+            box-shadow: 0 0 25px rgba(255, 107, 157, 0.2), inset 0 0 15px rgba(255, 107, 157, 0.08);
+        }
+
+        .modal.modal-inactive-bonus .modal-content {
+            border: 2px solid rgba(255, 165, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.15), inset 0 0 12px rgba(255, 165, 0, 0.08);
+            filter: brightness(0.95);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .bonus-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .modal-content {
+                max-width: 95%;
+                padding: 1.5rem;
+            }
+
+            #modalCharDetail > div {
+                grid-template-columns: 1fr !important;
+            }
+
+            .modal-image-container {
+                max-width: 100%;
+                height: 250px !important;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Modal Image Container */
+        .modal-image-container {
+            width: 100%;
+            max-width: 350px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.15));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .modal-image {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            object-position: center;
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌀 StickMazz - BONUS CHARACTERS</h1>
+        <p>✨ Visitor & Karakter Tambahan yang Datang dan Pergi di Nesyabella ✨</p>
+    </header>
+
+    <div class="container">
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">← Kembali ke Main Characters</a>
+        </div>
+
+        <div class="section-title">🎭 Karakter Bonus Aktif</div>
+        <div class="bonus-grid" id="activeBonusGrid"></div>
+
+        <div class="section-title">🚧 Karakter Bonus Dalam Perencanaan</div>
+        <div class="bonus-grid" id="planningBonusGrid"></div>
+    </div>
+
+    <!-- Modal Detail -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalCharName"></h2>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body" id="modalCharDetail"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>🌍 StickMazz Semesta Nesyabella | © Naufal MrSov | Bonus Characters & Visitor Edition</p>
+    </footer>
+
+    <script src="bonus-characters.js"></script>
+</body>
+</html>
