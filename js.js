@@ -411,11 +411,11 @@ const musicDatabase = [
   },
   {
     id: 25,
-    src: '#',
+    src: 'Sang Antagonis - StickMazz (Official Audio).mp3',
     title: 'Phase H - Dark Mode',
     character: 'CTC 1 (Black)',
     characterCode: 'CTC1',
-    img: 'img/ctc1.jpg',
+    img: 'Black In Ground.jpg',
     vibe: 'Ilmu Hitam & Chaos',
     zone: 'Darkness',
     color: '#1A1A1A',
@@ -435,7 +435,7 @@ const musicDatabase = [
   },
   {
     id: 27,
-    src: '#',
+    src: 'Fathur Western - StickMazz (Official Audio).mp3',
     title: 'Sheriff Sereal',
     character: 'TOC198 (Fathur Train)',
     characterCode: 'TOC198',
@@ -447,7 +447,7 @@ const musicDatabase = [
   },
   {
     id: 28,
-    src: '#',
+    src: 'Simbol Harapan - StickMazz (Official Audio).mp3',
     title: 'Maglev Teknologi',
     character: 'ST100 (Aurina)',
     characterCode: 'ST100',
@@ -459,7 +459,7 @@ const musicDatabase = [
   },
   {
     id: 29,
-    src: '#',
+    src: 'Lokomotif Kucing - StickMazz (Official Audio).mp3',
     title: 'Lokomotif Kucing',
     character: 'TOC209 (Wenda Jasmine)',
     characterCode: 'TOC209',

@@ -1,0 +1,93 @@
+/* ========================================
+   TRANSITION ANIMATION - GLITCH & SCREEN FADE
+   ======================================== */
+
+/* Full Screen Overlay untuk Transisi */
+.forbidden-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    z-index: 9999;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.forbidden-transition-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Glitch Effect Container */
+.glitch-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 10000;
+    display: none;
+    pointer-events: none;
+}
+
+.glitch-screen.active {
+    display: block;
+    animation: screen-glitch-entrance 1.5s ease-out forwards;
+}
+
+/* ===== SCREEN FADE OUT EFFECT ===== */
+@keyframes screen-fade-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+}
+
+/* ===== GLITCH EFFECTS ===== */
+@keyframes glitch-horizontal-shift {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20% {
+        transform: translateX(-5px);
+    }
+    40% {
+        transform: translateX(3px);
+    }
+    60% {
+        transform: translateX(-8px);
+    }
+    80% {
+        transform: translateX(2px);
+    }
+}
+
+@keyframes glitch-vertical-distort {
+    0%, 100% {
+        transform: skewY(0deg);
+    }
+    25% {
+        transform: skewY(2deg);
+    }
+    50% {
+        transform: skewY(-3deg);
+    }
+    75% {
+        transform: skewY(1deg);
+    }
+}
+
+@keyframes glitch-color-shift {
+    0% {
+        filter: hue-rotate(0deg) brightness(1);\n    }\n    25% {\n        filter: hue-rotate(180deg) brightness(0.8);\n    }\n    50% {\n        filter: hue-rotate(360deg) brightness(1.1);\n    }\n    75% {\n        filter: hue-rotate(180deg) brightness(0.9);\n    }\n    100% {\n        filter: hue-rotate(0deg) brightness(1);\n    }\n}\n\n@keyframes glitch-scan-lines {\n    0% {\n        background-position: 0 0;\n    }\n    100% {\n        background-position: 0 10px;\n    }\n}\n\n@keyframes glitch-noise {\n    0%, 100% {\n        opacity: 0.3;\n    }\n    50% {\n        opacity: 0.7;\n    }\n}\n\n@keyframes screen-glitch-entrance {\n    0% {\n        opacity: 0;\n        transform: scaleX(0) scaleY(1);\n    }\n    20% {\n        opacity: 1;\n        transform: scaleX(1) scaleY(1);\n    }\n    50% {\n        opacity: 0.8;\n        transform: scaleX(0.95) scaleY(1.05);\n    }\n    70% {\n        opacity: 0.5;\n        transform: scaleX(1.02) scaleY(0.98);\n    }\n    100% {\n        opacity: 1;\n        transform: scaleX(1) scaleY(1);\n    }\n}\n\n/* Glitch Bars */\n.glitch-bar {\n    position: absolute;\n    width: 100%;\n    height: 5%;\n    background: repeating-linear-gradient(\n        90deg,\n        #ff0000,\n        #ff0000 10px,\n        #0000ff 10px,\n        #0000ff 20px,\n        #00ff00 20px,\n        #00ff00 30px\n    );\n    opacity: 0.6;\n    mix-blend-mode: screen;\n}\n\n.glitch-bar-1 { top: 10%; animation: glitch-horizontal-shift 0.3s ease-in-out 0.3s forwards; }\n.glitch-bar-2 { top: 25%; animation: glitch-horizontal-shift 0.4s ease-in-out 0.5s forwards reverse; }\n.glitch-bar-3 { top: 40%; animation: glitch-horizontal-shift 0.35s ease-in-out 0.7s forwards; }\n.glitch-bar-4 { top: 55%; animation: glitch-horizontal-shift 0.45s ease-in-out 0.4s forwards reverse; }\n.glitch-bar-5 { top: 70%; animation: glitch-horizontal-shift 0.3s ease-in-out 0.6s forwards; }\n\n/* Scan Lines Effect */\n.glitch-scanlines {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: repeating-linear-gradient(\n        0deg,\n        rgba(255, 255, 255, 0.03),\n        rgba(255, 255, 255, 0.03) 1px,\n        transparent 1px,\n        transparent 2px\n    );\n    animation: glitch-scan-lines 0.2s linear infinite;\n    pointer-events: none;\n}\n\n/* Noise Effect */\n.glitch-noise {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><filter id=\"n\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.9\" numOctaves=\"4\"/><feColorMatrix type=\"saturate\" values=\"0\"/></filter><rect width=\"100\" height=\"100\" fill=\"white\" filter=\"url(%23n)\"/></svg>');\n    opacity: 0.05;\n    animation: glitch-noise 0.1s step-start infinite;\n    mix-blend-mode: overlay;\n}\n\n/* Text Glitch Effect */\n.glitch-text-distort {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    font-size: 3rem;\n    font-weight: bold;\n    color: #ff0000;\n    text-shadow: -2px 0 #0000ff, 2px 0 #00ff00;\n    letter-spacing: 10px;\n    opacity: 0;\n    animation: text-glitch-fade 1s ease-out 0.5s forwards;\n    pointer-events: none;\n    z-index: 10001;\n}\n\n@keyframes text-glitch-fade {\n    0% {\n        opacity: 1;\n        transform: translate(-50%, -50%) skewX(-20deg);\n    }\n    50% {\n        opacity: 0.7;\n        transform: translate(-50%, -50%) skewX(10deg);\n    }\n    100% {\n        opacity: 0;\n        transform: translate(-50%, -50%) skewX(0);\n    }\n}\n\n/* Screen Crack Effect */\n.glitch-crack {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: radial-gradient(circle at center, transparent 0%, rgba(255, 0, 0, 0.1) 50%, rgba(255, 0, 0, 0.2) 100%);\n    animation: crack-pulse 0.5s ease-out 0.8s forwards;\n}\n\n@keyframes crack-pulse {\n    0% {\n        box-shadow: inset 0 0 50px rgba(255, 0, 0, 0.5);\n    }\n    100% {\n        box-shadow: inset 0 0 100px rgba(255, 0, 0, 0);\n    }\n}\n\n/* RGB Split Glitch */\n.glitch-rgb-split {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(90deg, rgba(255, 0, 0, 0.3) 0%, transparent 33%, rgba(0, 255, 0, 0.3) 66%, transparent 100%);\n    animation: rgb-shift 0.4s ease-out 0.2s forwards;\n}\n\n@keyframes rgb-shift {\n    0% {\n        transform: translateX(-50px);\n        opacity: 1;\n    }\n    100% {\n        transform: translateX(50px);\n        opacity: 0;\n    }\n}\n\n/* Power Down Effect */\n.glitch-powerdown {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: #000;\n    z-index: 10001;\n    opacity: 0;\n    animation: power-down 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;\n}\n\n@keyframes power-down {\n    0% {\n        opacity: 0;\n        clip-path: inset(0 0 0 0);\n    }\n    10% {\n        opacity: 1;\n        clip-path: inset(0 0 0 0);\n    }\n    50% {\n        opacity: 1;\n        clip-path: inset(40% 0 40% 0);\n    }\n    100% {\n        opacity: 1;\n        clip-path: inset(50% 0 50% 0);\n    }\n}\n\n/* Loading Transition */\n.glitch-transition-complete {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(135deg, rgba(26, 10, 10, 0.9), rgba(220, 20, 60, 0.3));\n    z-index: 10002;\n    opacity: 0;\n    animation: transition-complete 0.8s ease-out forwards;\n}\n\n@keyframes transition-complete {\n    0% {\n        opacity: 0;\n    }\n    50% {\n        opacity: 1;\n    }\n    100% {\n        opacity: 0;\n    }\n}\n

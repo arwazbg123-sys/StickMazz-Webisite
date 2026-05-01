@@ -1,0 +1,458 @@
+/* ========================================
+   F-AIM MODULE - TECHNICAL STYLING
+   ======================================== */
+
+:root {
+    /* Technical Color Palette */
+    --tech-primary: #0d1f2d;
+    --tech-secondary: #1a2f42;
+    --tech-tertiary: #254158;
+    
+    /* Accent Colors */
+    --accent-tech-blue: #4A90E2;
+    --accent-tech-cyan: #50C7D8;
+    --accent-tech-gold: #D4AF37;
+    --accent-tech-purple: #9966CC;
+    
+    /* Text Colors */
+    --text-tech: #E8E8E8;
+    --text-tech-muted: #A0A0A0;
+}
+
+/* ========== BODY & GENERAL ========== */
+.faim-theme {
+    background: linear-gradient(135deg, #0a1520 0%, #0d1f2d 50%, #1a2f42 100%);
+    color: var(--text-tech);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.faim-theme body {
+    background-attachment: fixed;
+}
+
+/* ========== NAVBAR ========== */
+.faim-navbar {
+    background: linear-gradient(90deg, rgba(74, 144, 226, 0.1), rgba(80, 199, 216, 0.1));
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(80, 199, 216, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.faim-navbar .logo-icon {
+    opacity: 0.95;
+}
+
+.faim-navbar .logo-text {
+    background: linear-gradient(90deg, #4A90E2, #50C7D8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========== PAGE HEADER ========== */
+.faim-header {
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(80, 199, 216, 0.08) 100%);
+    border-bottom: 1px solid rgba(80, 199, 216, 0.2);
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.faim-header h1 {
+    font-size: 3rem;
+    color: #4A90E2;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.faim-subtitle {
+    color: #D4AF37;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ========== CONTAINER ========== */
+.faim-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* ========== SECTION ========== */
+.faim-section {
+    margin-bottom: 3rem;
+}
+
+.section-header {
+    border-left: 4px solid #4A90E2;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #4A90E2;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    color: #A0A0A0;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* ========== CARDS ========== */
+.faim-card {
+    background: linear-gradient(135deg, rgba(26, 47, 66, 0.5), rgba(37, 65, 88, 0.4));
+    border: 1px solid rgba(80, 199, 216, 0.2);
+    border-radius: 8px;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.faim-card:hover {
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.15);
+    border-color: rgba(80, 199, 216, 0.3);
+}
+
+.card-header {
+    background: linear-gradient(90deg, rgba(74, 144, 226, 0.1), rgba(80, 199, 216, 0.08));
+    border-bottom: 1px solid rgba(80, 199, 216, 0.15);
+    padding: 1rem 1.5rem;
+}
+
+.faim-card-header {
+    background: linear-gradient(90deg, rgba(74, 144, 226, 0.08), rgba(80, 199, 216, 0.06));
+    border-bottom: 1px solid rgba(80, 199, 216, 0.12);
+}
+
+.card-header h3,
+.card-header h4 {
+    color: #4A90E2;
+    margin: 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.card-content {
+    padding: 1.5rem;
+    color: var(--text-tech);
+    line-height: 1.8;
+}
+
+.card-content p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ========== INFO BOX ========== */
+.info-box {
+    background: rgba(74, 144, 226, 0.08);
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    color: #50C7D8;
+    font-weight: bold;
+}
+
+.info-row .value {
+    color: #E8E8E8;
+}
+
+/* ========== VARIANT CARDS ========== */
+.variant-card {
+    margin-bottom: 2rem;
+}
+
+.variant-header {
+    position: relative;
+    padding: 1.5rem;
+    border-bottom: 2px solid;
+}
+
+.explicit-header {
+    border-bottom-color: rgba(212, 175, 55, 0.4);
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.05), transparent);
+}
+
+.explicit-header h4 {
+    color: #D4AF37;
+}
+
+.abstract-header {
+    border-bottom-color: rgba(80, 199, 216, 0.4);
+    background: linear-gradient(90deg, rgba(80, 199, 216, 0.05), transparent);
+}
+
+.abstract-header h4 {
+    color: #50C7D8;
+}
+
+.variant-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin-left: 1rem;
+    font-weight: 600;
+}
+
+.variant-description {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(80, 199, 216, 0.15);
+}
+
+/* ========== VARIANT DETAILS ========== */
+.variant-details {
+    margin: 1.5rem 0;
+}
+
+.variant-details h5 {
+    color: #4A90E2;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.specs-list {
+    background: rgba(74, 144, 226, 0.06);
+    border-left: 3px solid #4A90E2;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.spec-item:not(:last-child) {
+    border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+}
+
+.spec-label {
+    color: #50C7D8;
+    font-weight: 600;
+}
+
+.spec-value {
+    color: #E8E8E8;
+    text-align: right;
+    flex: 1;
+    margin-left: 1rem;
+}
+
+/* ========== PROS & CONS ========== */
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.pros, .cons {
+    padding: 1rem;
+    background: rgba(74, 144, 226, 0.06);
+    border-radius: 5px;
+    border-left: 3px solid;
+}
+
+.pros {
+    border-left-color: #50C7D8;
+}
+
+.pros h5 {
+    color: #50C7D8;
+}
+
+.cons {
+    border-left-color: #D4AF37;
+}
+
+.cons h5 {
+    color: #D4AF37;
+}
+
+.pros h5, .cons h5 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.pros ul, .cons ul {
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    color: var(--text-tech);
+}
+
+.pros li, .cons li {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ========== COMPONENTS TABLE ========== */
+.components-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.components-table thead {
+    background: linear-gradient(90deg, rgba(74, 144, 226, 0.15), rgba(80, 199, 216, 0.1));
+    border-bottom: 1px solid rgba(80, 199, 216, 0.2);
+}
+
+.components-table th {
+    padding: 1rem;
+    text-align: left;
+    color: #4A90E2;
+    font-weight: bold;
+}
+
+.components-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(80, 199, 216, 0.1);
+    color: #E8E8E8;
+}
+
+.components-table tbody tr:hover {
+    background: rgba(74, 144, 226, 0.08);
+}
+
+.component-name {
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+/* ========== PROCESS LIST ========== */
+.process-list {
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+}
+
+.process-list li {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(74, 144, 226, 0.08);
+    border-left: 3px solid #4A90E2;
+    border-radius: 4px;
+    color: #E8E8E8;
+    line-height: 1.7;
+}
+
+.process-list strong {
+    color: #50C7D8;
+    font-weight: 600;
+}
+
+/* ========== TRAITS GRID ========== */
+.traits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.trait-item {
+    background: rgba(74, 144, 226, 0.08);
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.trait-item:hover {
+    background: rgba(74, 144, 226, 0.12);
+    border-color: rgba(74, 144, 226, 0.3);
+    transform: translateY(-2px);
+}
+
+.trait-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.trait-item strong {
+    display: block;
+    color: #4A90E2;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.trait-item p {
+    font-size: 0.9rem;
+    color: #A0A0A0;
+    margin: 0;
+}
+
+/* ========== FOOTER ========== */
+.faim-footer {
+    background: linear-gradient(90deg, rgba(74, 144, 226, 0.08), rgba(80, 199, 216, 0.06));
+    border-top: 1px solid rgba(80, 199, 216, 0.2);
+    text-align: center;
+    padding: 2rem;
+    color: #A0A0A0;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .faim-header h1 {
+        font-size: 2rem;
+    }
+
+    .faim-subtitle {
+        font-size: 1rem;
+    }
+
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+
+    .traits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .info-row {
+        flex-direction: column;
+    }
+
+    .info-row .label {
+        margin-bottom: 0.3rem;
+    }
+
+    .spec-item {
+        flex-direction: column;
+    }
+
+    .spec-value {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 0.3rem;
+    }
+}

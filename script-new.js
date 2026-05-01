@@ -49,7 +49,7 @@ const characters = [
         sifat: 'Manis, positif, suka teknologi',
         peran: 'Ilmuwan pencipta TOC-AI01',
         detail: 'Nitra adalah ilmuwan cerdas dan penemu TOC-AI01. Dia manis, positif, dan memiliki passion besar terhadap teknologi. Dia percaya bahwa inovasi dapat menyelamatkan dunia.',
-        image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAKPHJLCM+cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCNncmFkMSkiLz4KICAKPGRVZV0+bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAKPFN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2E2NzZmYjtzdG9wLW9wYWNpdHk6MSIgLz4KICAKPFN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojODM0ZGY1O3N0b3Atb3BhY2l0eToxIiAvPgogIAo8L2xpbmVhckdyYWRpZW50PgogIAo8L2RlZnM+CiAgCjxyZWN0IHg9IjYwIiB5PSI0MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2E2NzZmYiIgcng9IjEwIi8+CjxyZWN0IHg9IjcwIiB5PSI2MCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjgiLz4KPGR5PVBvbHlnb24gcG9pbnRzPSIxMDAsMTUwIDcwLDE4MCAxMzAsMTgwIiBmaWxsPSIjODM0ZGY1Ii8+CjxjaXJjbGUgY3g9IjgyIiBjeT0iNzUiIHI9IjUiIGZpbGw9IiNmZmZmZmYiLz4KPGNpcmNsZSBjeD0iMTE4IiBjeT0iNzUiIHI9IjUiIGZpbGw9IiNmZmZmZmYiLz4KPC9zdmc+',
+        image: 'Nitrai The Visionary Schinetic.jpg',
         status: 'active'
     },
     {
@@ -69,7 +69,7 @@ const characters = [
         sifat: 'Tegas, penyendiri, disiplin tinggi',
         peran: 'Bos pelindung lokomotif',
         detail: 'TOC777 adalah tokoh kepemimpinan yang tegas dan bijaksana. Meskipun penyendiri, dia memiliki disiplin tinggi dan berkomitmen melindungi semua lokomotif di Nesyabella. Dia memiliki senjata plasma yang powerful.',
-        image: 'Sang Pelindung.jpg',
+        image: 'Guardian Spirit Fight On Darkness.jpg',
         status: 'active'
     },
     {
@@ -79,7 +79,7 @@ const characters = [
         sifat: 'Hebat, kuat, sigap',
         perol: 'Kereta pemadam kebakaran',
         detail: 'Blaze adalah lokomotif pemadam kebakaran yang hebat dan kuat. Dia selalu siap merespons setiap keadaan darurat dengan cepat dan efisien. Kepedenya tidak tertandingi dalam situasi kritis.',
-        image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAKPHJLCM+cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCNncmFkMSkiLz4KICAKPGRVZV0+bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAKPFN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmMjQyNDtzdG9wLW9wYWNpdHk6MSIgLz4KICAKPFN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZmY4YzAwO3N0b3Atb3BhY2l0eToxIiAvPgogIAo8L2xpbmVhckdyYWRpZW50PgogIAo8L2RlZnM+CiAgCjxyZWN0IHg9IjQwIiB5PSI1MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNTAiIGZpbGw9IiNmZjI0MjQiIHJ4PSI1Ii8+Cjxwb2x5Z29uIHBvaW50cz0iNjAsMjAgODAsNDAgOTAsNTAgMTEwLDQwIDEzMCwyMCAxMjAsMzAgMTAwLDM1IDgwLDM1IDYwLDMwIiBmaWxsPSIjZmZhNjAwIi8+CjxyZWN0IHg9IjcwIiB5PSI4MCIgd2lkdGg9IjYwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjZmZmZmZmIiBvcGFjaXR5PSIwLjciLz4KPHBvbHlnb24gcG9pbnRzPSI1MCwyMDAgMTUwLDIwMCAxNDAsMjMwIDYwLDIzMCIgZmlsbD0iI2ZmOGMwMCIvPgo8L3N2Zz4=',
+        image: 'Blazes Passing The Dirt.jpg',
         status: 'inactive'
     },
     {
@@ -89,7 +89,7 @@ const characters = [
         sifat: 'Cerdas, efisien, robotik',
         peran: 'Kereta AI pertama',
         detail: 'TOC-AI01 adalah lokomotif berteknologi AI pertama yang sepenuhnya robotik. Dia sangat cerdas dan efisien dalam menjalankan tugas. Dia adalah hasil karya brilian ilmuwan Nitra dan menjadi simbol kemajuan teknologi Nesyabella.',
-        image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAKPHJLCM+cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCNncmFkMSkiLz4KICAKPGRVZV0+bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAKPFN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAwZGExYztzdG9wLW9wYWNpdHk6MSIgLz4KICAKPFN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDA2ZjRlO3N0b3Atb3BhY2l0eToxIiAvPgogIAo8L2xpbmVhckdyYWRpZW50PgogIAo8L2RlZnM+CiAgCjxyZWN0IHg9IjUwIiB5PSI0MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwMGRhMWMiIHJ4PSI1Ii8+CjxyZWN0IHg9IjYwIiB5PSI1MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjU1IiBmaWxsPSIjMDA2ZjRlIi8+CjxyZWN0IHg9IjcwIiB5PSI2MCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBmaWxsPSIjZmZmZmZmIi8+CjxyZWN0IHg9IjkwIiB5PSI2MCIgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiBmaWxsPSIjZmZmZmZmIi8+CjxyZWN0IHg9IjExMCIgeT0iNjAiIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgZmlsbD0iI2ZmZmZmZiIvPgo8cmVjdCB4PSI2MCIgeT0iOTAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC4yIi8+CjxwYXRoIGQ9Ik0gNjAgMTYwIEwgNjAgMjAwIEwgODAgMjEwIEwgMTIwIDIxMCBMIDE0MCAyMDAgTCAxNDAgMTYwIiBmaWxsPSIjMDA2ZjRlIiBzdHJva2U9IiMwMGRhMWMiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4=',
+        image: 'TOCAI01 The Futuristic Trains (2).jpg',
         status: 'suspended'
     },
     {
@@ -99,7 +99,7 @@ const characters = [
         sifat: 'Tangguh, Genial',
         peran: 'Kereta Logistik berat',
         detail: 'TocKay adalah kereta perempuan yang sangat tangguh dan genial dia lokomotif perempuan pertama di nesyabella yang mampu menyaingi seluruh ketangguhan para lokomotif laki laki.',
-        image: 'TOCKAY.jpg',
+        image: 'TocKay The Strong Flowers (2).jpg',
         status: 'suspended'
     },
     {
@@ -109,7 +109,7 @@ const characters = [
         sifat: 'Energik, penuh semangat',
         peran: 'Kereta petir untuk penyelamatan ekstrem',
         detail: 'Thunder adalah lokomotif yang penuh energi dan semangat. Dia dilengkapi dengan teknologi petir yang memungkinkannya merespons situasi penyelamatan yang paling ekstrem sekalipun.',
-        image: 'Laju elektrik.jpg',
+        image: 'Thunder in Stroms (2).jpg',
         status: 'inactive'
     },
     {
@@ -119,7 +119,7 @@ const characters = [
         sifat: 'Pemarah, galak, bijaksana',
         peran: 'Lokomotif penumpang dan industrial',
         detail: 'LokoRed adalah lokomotif yang pemarah tapi bijaksana. Meskipun galak di permukaan, dia memiliki hati yang baik dan sering memberikan nasihat berharga. Dia multifungsi sebagai penumpang dan industrial.',
-        image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAKPHJLCM+cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCNncmFkMSkiLz4KICAKPGRVZV0+bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAKPFN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2RjMjcyNztzdG9wLW9wYWNpdHk6MSIgLz4KICAKPFN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojOTAxYTFhO3N0b3Atb3BhY2l0eToxIiAvPgogIAo8L2xpbmVhckdyYWRpZW50PgogIAo8L2RlZnM+CiAgCjxyZWN0IHg9IjMwIiB5PSI0MCIgd2lkdGg9IjE0MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiNkYzI3MjciIHJ4PSI4Ii8+CjxyZWN0IHg9IjUwIiB5PSI2MCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI1MCIgZmlsbD0iIzljMDAwMCIvPgo8cmVjdCB4PSI2MCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIzMCIgZmlsbD0iI2ZmZmZmZiIgb3BhY2l0eT0iMC43Ii8+CjxyZWN0IHg9IjQwIiB5PSIxMzAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzljMDAwMCIvPgo8cmVjdCB4PSIxMjAiIHk9IjEzMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjOWMwMDAwIi8+CjxyZWN0IHg9IjQ1IiB5PSIyMDUiIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2RjMjcyNyIvPgo8cmVjdCB4PSIxMjUiIHk9IjIwNSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjZGMyNzI3Ii8+Cjwvc3ZnPg==',
+        image: 'Lokored in Rimbas.jpg',
         status: 'missing'
     },
     {
@@ -129,7 +129,7 @@ const characters = [
         sifat: 'Bijaksana, ingatan luas',
         peran: 'Lokomotif berpengalaman',
         detail: 'Mbah Ti adalah lokomotif tertua dan paling berpengalaman. Dia memiliki ingatan yang luas tentang sejarah Nesyabella dan sering menjadi mentor bagi lokomotif muda. Kebijaksanaannya sangat dihargai.',
-        image: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAKPHJLCM+cmVjdCB3aWR0aD0iMjAwIiBoZWlnaHQ9IjI1MCIgZmlsbD0idXJsKCNncmFkMSkiLz4KICAKPGRVZV0+bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI6IjEwMCUiIHkyPSIxMDAlIj4KICAKPFN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2YjI2YjtzdG9wLW9wYWNpdHk6MSIgLz4KICAKPFN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNDQ4YzQyO3N0b3Atb3BhY2l0eToxIiAvPgogIAo8L2xpbmVhckdyYWRpZW50PgogIAo8L2RlZnM+CiAgCjxyZWN0IHg9IjQwIiB5PSI1MCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiM0NDhjNDIiIHJ4PSI2Ii8+CjxyZWN0IHg9IjYwIiB5PSI3MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjUwIiBmaWxsPSIjNjZiMjZiIi8+CjxyZWN0IHg9IjcwIiB5PSI4MCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjZmZmZmZmIi8+CjxyZWN0IHg9IjkwIiB5PSI4MCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBmaWxsPSIjZmZmZmZmIi8+CjxyZWN0IHg9IjExMCIgeT0iODAiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2ZmZmZmZiIvPgo8Y2lyY2xlIGN4PSIxMDAiIGN5PSI0MCIgcj0iMjAiIGZpbGw9IiM2NmIyNmIiIHN0cm9rZT0iIzQ0OGM0MiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPg==',
+        image: 'Mbah ti On Antic Museum.jpg',
         status: 'active'
     }
 ];
