@@ -206,7 +206,7 @@ const umbraBellaLore = {
 
   conflicts: {
     majorConflict: 'Pertarungan Crimson Nexus vs Bloodstrike Crew',
-    setting: 'Markas Crimson Nexus, dalam lorong-lorong berlapis',
+    setting: 'Markas Crimson Nexus (lokasi tersembunyi), dalam lorong-lorong berlapis',
     objective: 'Bloodstrike mencoba mencuri artefak berharga dari Crimson Nexus'
   },
 
@@ -218,7 +218,7 @@ const episodeConflict = {
   title: 'Markas Kejebolan - Serangan Bloodstrike',
   season: 'Season 1',
   episode: 'Episode [TBD]',
-  setting: 'Markas Crimson Nexus, UmbraBella',
+  setting: 'Markas Crimson Nexus (lokasi tersembunyi)',
   timeframe: 'Pertengahan Era Konflik (Timeline Dunia)',
   
   act1: {

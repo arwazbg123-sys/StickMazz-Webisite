@@ -5,77 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StickMazz Wiki - Karakter Bonus</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="karakter-bonus.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <h1>🚂 STICKMAZZ WIKI</h1>
-        <p class="subtitle">Koleksi Karakter Bonus & Eksklusif</p>
+        <p class="subtitle">Karakter Bonus Stickman</p>
     </header>
 
-    <!-- Navigation Tabs -->
     <div class="nav-tabs">
-        <a href="index.html" class="tab-btn" style="text-decoration: none; flex: 1;">🏠 Kembali ke Wiki Utama</a>
-        <a href="navigation.html" class="tab-btn" style="text-decoration: none; flex: 1; background: rgba(255, 0, 110, 0.1); border: 1px solid #ff006e;">⬅️ Ke Navigasi</a>
+        <a href="index.html" class="tab-btn">🏠 Wiki Utama</a>
+        <a href="navigation.html" class="tab-btn">⬅️ Navigasi</a>
+        <a href="karakter-bonus.html" class="tab-btn active">🎁 Bonus</a>
     </div>
 
-    <!-- Main Container -->
-    <div class="container">
-        <div class="section">
-            <h2>🎁 Karakter Bonus & Eksklusif</h2>
-            <p>
-                Halaman ini adalah tempat untuk mengumpulkan karakter-karakter bonus Stickman yang eksklusif yang tidak tampil di wiki utama. 
-                Konten ini masih dalam pengembangan dan dapat diisi dengan berbagai karakter spesial sesuai kebutuhan.
-            </p>
-
-            <div class="info-box">
-                <div class="info-box-title">📋 Placeholder - Siap untuk Konten</div>
-                <p style="margin-top: 1rem;">
-                    Halaman ini adalah area ekspansi yang dapat dikembangkan untuk menampilkan:
-                </p>
-                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
-                    <li>✨ Karakter-karakter Stickman khusus atau limited edition</li>
-                    <li>🎨 Desain alternatif atau versi karakter lain</li>
-                    <li>🎭 Karakter cameo atau kolaborasi</li>
-                    <li>🎪 Event-only characters atau musiman</li>
-                    <li>🌟 Variasi karakter dalam timeline berbeda</li>
-                </ul>
+    <main id="bonusPage">
+        <section class="hero-panel">
+            <div class="hero-copy">
+                <div class="eyebrow">Ras Stickman VNO</div>
+                <h2>Karakter Bonus Ras Stickman</h2>
+                <p>Halaman ini menampilkan deretan karakter Stickman dari Vision Nexus Organisation (VNO) beserta karakter bonus Stickman eksklusif dari dunia StickMazz. Lihat detail lengkap setiap karakter, peran mereka, dan cerita menarik di balik mereka.</p>
+                <div class="search-panel">
+                    <input type="search" placeholder="Cari nama, kode, ras, kategori, atau zona..." oninput="setSearch(this.value)">
+                    <div class="filter-row">
+                        <div class="filter-group"><span>Filter Status:</span></div>
+                        <button class="filter-chip active" data-status="all" onclick="setStatusFilter('all')">Semua</button>
+                        <button class="filter-chip" data-status="active" onclick="setStatusFilter('active')">Active</button>
+                        <button class="filter-chip" data-status="inactive" onclick="setStatusFilter('inactive')">Inactive</button>
+                        <button class="filter-chip" data-status="suspended" onclick="setStatusFilter('suspended')">Suspended</button>
+                        <button class="filter-chip" data-status="missing" onclick="setStatusFilter('missing')">Missing</button>
+                    </div>
+                </div>
             </div>
-
-            <div style="background: rgba(0, 217, 255, 0.05); border: 1px solid rgba(0, 217, 255, 0.2); border-radius: 10px; padding: 2rem; text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.1rem; color: var(--text-light);">
-                    💡 <strong>Mulai mengumpulkan karakter bonus di sini!</strong>
-                </p>
-                <p style="color: var(--text-muted); margin-top: 1rem; font-size: 0.9rem;">
-                    Tambahkan karakter-karakter baru ke halaman ini sesuai dengan kebutuhan konten Anda.
-                </p>
+            <div class="hero-actions">
+                <div class="hero-stat">
+                    <strong>Karakter VNO</strong>
+                    <span>8 anggota Vision Nexus Organisation</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Ras Stickman</strong>
+                    <span>9+ karakter Stickman bonus unik</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Kaya Detail</strong>
+                    <span>Setiap karakter punya cerita mendalam</span>
+                </div>
+                <div class="hero-stat">
+                    <strong>Interaktif</strong>
+                    <span>Filter, cari, dan eksplorasi karakter</span>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Coming Soon Section -->
-        <div class="section">
-            <h2>🚀 Fitur yang Akan Ditambahkan</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                <div class="info-box">
-                    <div class="info-box-title">📸 Gallery Karakter</div>
-                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Tampilan visual dari setiap karakter bonus</p>
+        <section class="section-header">
+            <div>
+                <h3>Daftar Karakter Stickman VNO & Bonus</h3>
+                <p>Klik kartu untuk melihat detail lengkap karakter. Tim VNO terdiri dari 8 anggota utama yang melindungi artefak kuat dan menjaga keseimbangan dunia. Selain itu ada karakter bonus Stickman yang unik dan menarik. Gunakan pencarian dan filter untuk menemukan karakter yang kamu cari.</p>
+            </div>
+        </section>
+
+        <section class="bonus-grid" id="bonusGrid"></section>
+    </main>
+
+    <div class="modal-overlay" id="detailModal" onclick="if(event.target === this) closeCharacterModal();">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeCharacterModal()">✕</button>
+            <h3 id="modalCharName">Nama Karakter</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 0 2rem 2rem;">
+                <div class="modal-image-container">
+                    <img id="modalCharImage" class="modal-image" src="" alt="Karakter" />
                 </div>
-                <div class="info-box">
-                    <div class="info-box-title">📝 Deskripsi Lengkap</div>
-                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Latar belakang dan cerita setiap karakter</p>
+                <div>
+                    <div class="char-status status-active" id="modalCharBadge">ACTIVE</div>
+                    <p><strong>Ras:</strong> <span id="modalCharRace"></span></p>
+                    <p><strong>Peran:</strong> <span id="modalCharRole"></span></p>
+                    <p><strong>Kategori:</strong> <span id="modalCharCategory"></span></p>
+                    <p><strong>Zona:</strong> <span id="modalCharZone"></span></p>
+                    <p><strong>Vibe:</strong> <span id="modalCharVibe"></span></p>
                 </div>
-                <div class="info-box">
-                    <div class="info-box-title">🎯 Kemampuan Khusus</div>
-                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Fitur unik dan keahlian khusus</p>
-                </div>
-                <div class="info-box">
-                    <div class="info-box-title">🔗 Relasi Antar Karakter</div>
-                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Hubungan dengan karakter utama</p>
-                </div>
+            </div>
+            <div style="padding: 0 2rem 2rem;">
+                <h4 style="color: rgba(255,255,255,0.92); margin: 0 0 0.8rem 0;">Cerita Karakter</h4>
+                <p id="modalCharStory">Cerita karakter akan muncul di sini saat kamu memilih kartu.</p>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="karakter-bonus.js"></script>
 </body>
 </html>
