@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👑 StickMazz - Tim Pembuat | Founders & Creators</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Static background - no animation for performance */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        header {
+            position: relative;
+            z-index: 10;
+            background: linear-gradient(90deg, #b033d0 0%, #d946ef 50%, #7c3aed 100%);
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(217, 70, 239, 0.4), inset 0 0 30px rgba(255, 255, 255, 0.08);
+            border-bottom: 2px solid rgba(217, 70, 239, 0.3);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 0 0 40px rgba(217, 70, 239, 0.6), 0 0 20px rgba(124, 58, 237, 0.4);
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+            font-weight: 900;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(217, 70, 239, 0.08));
+            border: 2px solid rgba(217, 70, 239, 0.25);
+            border-radius: 25px;
+            padding: 40px 30px;
+            box-shadow: 0 0 30px rgba(217, 70, 239, 0.15);
+        }
+
+        .intro-section h2 {
+            font-size: 2.2rem;
+            color: #d946ef;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(217, 70, 239, 0.3);
+        }
+
+        .intro-section p {
+            font-size: 1.05rem;
+            color: #c0c0c0;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+            will-change: contents;
+        }
+
+        /* ===== FOUNDER PREMIUM CARD ===== */
+        .member-card {
+            position: relative;
+            height: 100%;
+            perspective: 1000px;
+        }
+
+        .member-card.founder {
+            grid-column: span 1;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 1024px) {
+            .member-card.founder {
+                grid-column: 1 / -1;
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        .card-inner {
+            background: linear-gradient(135deg, rgba(30, 15, 50, 0.95), rgba(20, 10, 40, 0.9));
+            border: 2px solid rgba(217, 70, 239, 0.35);
+            border-radius: 20px;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .member-card.founder .card-inner {
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #d946ef 0%, #a78bfa 25%, #60a5fa 50%, #a78bfa 75%, #d946ef 100%) 1;
+            background: linear-gradient(135deg, rgba(30, 15, 50, 0.98), rgba(20, 10, 40, 0.95));
+            box-shadow: 
+                0 0 40px rgba(217, 70, 239, 0.4),
+                inset 0 0 30px rgba(217, 70, 239, 0.1),
+                0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .member-card:hover .card-inner {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(217, 70, 239, 0.25), inset 0 0 20px rgba(217, 70, 239, 0.08);
+        }
+
+        .member-card.founder:hover .card-inner {
+            box-shadow: 
+                0 0 60px rgba(217, 70, 239, 0.6),
+                inset 0 0 40px rgba(217, 70, 239, 0.15),
+                0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Member Image Section */
+        .card-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, rgba(217, 70, 239, 0.15), rgba(124, 58, 237, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 2px solid rgba(217, 70, 239, 0.2);
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover .card-image img {
+            transform: scale(1.08);
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(217, 70, 239, 0.1) 0%, transparent 50%, rgba(124, 58, 237, 0.1) 100%);
+            pointer-events: none;
+        }
+
+        /* Placeholder when no image */
+        .card-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(217, 70, 239, 0.2), rgba(124, 58, 237, 0.15));
+            color: rgba(217, 70, 239, 0.5);
+            font-size: 4rem;
+        }
+
+        /* Card Content */
+        .card-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+
+        .member-name {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .member-card.founder .member-name {
+            font-size: 2.1rem;
+            background: linear-gradient(135deg, #d946ef, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid;
+            white-space: nowrap;
+        }
+
+        .badge.founder {
+            background: linear-gradient(135deg, #d946ef 0%, #a78bfa 50%, #60a5fa 100%);
+            border-color: rgba(217, 70, 239, 0.6);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(217, 70, 239, 0.4);
+            font-size: 0.8rem;
+            padding: 10px 16px;
+        }
+
+        .badge.creator {
+            background: linear-gradient(135deg, #f59e0b, #ec4899);
+            border-color: rgba(245, 158, 11, 0.5);
+            color: #fff;
+        }
+
+        .badge.artist {
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-color: rgba(139, 92, 246, 0.5);
+            color: #fff;
+        }
+
+        .badge.developer {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            border-color: rgba(6, 182, 212, 0.5);
+            color: #fff;
+        }
+
+        .badge.manager {
+            background: linear-gradient(135deg, #10b981, #14b8a6);
+            border-color: rgba(16, 185, 129, 0.5);
+            color: #fff;
+        }
+
+        .member-role {
+            font-size: 0.95rem;
+            color: #d946ef;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .member-description {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Info Grid */
+        .member-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid rgba(217, 70, 239, 0.15);
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .info-label {
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .info-value {
+            font-size: 0.85rem;
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid rgba(217, 70, 239, 0.2);
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(180deg, transparent 0%, rgba(217, 70, 239, 0.08) 100%);
+        }
+
+        footer p {
+            color: #888;
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        footer strong {
+            color: #d946ef;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .member-card.founder {
+                grid-column: auto;
+            }
+
+            .card-image {
+                height: 300px;
+            }
+
+            .member-name {
+                font-size: 1.5rem;
+            }
+
+            .member-card.founder .member-name {
+                font-size: 1.8rem;
+            }
+
+            .intro-section {
+                padding: 30px 20px;
+            }
+
+            .intro-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 30px 15px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .member-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Utility: No blur for performance */
+        body {
+            will-change: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>👑 STICKMAZZ CREATORS</h1>
+        <p>✨ Founder, Kreator, dan Tim Berbakat di Balik StickMazz ✨</p>
+    </header>
+
+    <div class="container">
+        <div class="intro-section">
+            <h2>Selamat Datang di Halaman Tim Pembuat</h2>
+            <p>Ini adalah halaman spesial untuk mengenali dan menghargai semua kreator berbakat yang telah berdedikasi dalam mengembangkan dunia StickMazz yang luar biasa. Dari konsep cerita hingga desain karakter, setiap orang di sini memiliki peran penting.</p>
+        </div>
+
+        <div class="team-grid" id="teamGrid"></div>
+    </div>
+
+    <footer>
+        <p><strong>🌍 StickMazz © 2024-2026</strong></p>
+        <p>Dibuat dengan ❤️ oleh tim hebat kami untuk semua penggemar StickMazz di seluruh dunia</p>
+        <p>Terima kasih telah menjadi bagian dari perjalanan luar biasa ini!</p>
+    </footer>
+
+    <script>
+        // Team data
+        const teamMembers = [
+            {
+                id: 1,
+                name: 'Naufal MrSov',
+                role: 'Founder & Creator',
+                badges: ['founder'],
+                description: 'Visioner di balik StickMazz. Menciptakan dunia imaginatif yang penuh dengan karakter unik, cerita mendalam, dan lore yang kompleks. Bertanggung jawab atas story development, character design, dan strategi kreatif keseluruhan.',
+                contributions: 'Story & Lore Development',
+                yearJoined: '2024',
+                image: 'Naufal mrsov.jpg',
+                color: '#d946ef'
+            },
+            {
+                id: 2,
+                name: 'Syakira Elmira Jasmin',
+                role: 'Co-Founder & Creative Lead',
+                badges: ['creator'],
+                description: 'Kreator utama yang bekerja sama erat dengan founder. Mengembangkan konsep visual, membantu dalam character design, dan berkontribusi dalam storytelling. Passion untuk menciptakan dunia yang kohesif dan menarik.',
+                contributions: 'Visual Concept & Character Design',
+                yearJoined: '2024',
+                image: 'syakira-elmira-jasmin.jpg',
+                color: '#f59e0b'
+            }
+        ];
+
+        // Render team members
+        function renderTeam() {
+            const gridContainer = document.getElementById('teamGrid');
+            gridContainer.innerHTML = teamMembers.map(member => {
+                const isFounder = member.badges.includes('founder');
+                const badgeClass = isFounder ? 'founder' : 'creator';
+                
+                return `
+                    <div class="member-card ${isFounder ? 'founder' : ''}">
+                        <div class="card-inner">
+                            <div class="card-image">
+                                ${member.image ? `<img src="${member.image}" alt="${member.name}" onerror="this.parentElement.classList.add('has-error')">` : ''}
+                                <div class="card-image-placeholder">👤</div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="member-name">${member.name}</h2>
+                                <div class="badge-container">
+                                    ${member.badges.map(badge => `<span class="badge ${badge}">${badge === 'founder' ? '👑 Founder' : badge === 'creator' ? '🎨 Creator' : badge === 'artist' ? '🖌️ Artist' : badge === 'developer' ? '💻 Developer' : '⭐ ' + badge}</span>`).join('')}
+                                </div>
+                                <p class="member-role">${member.role}</p>
+                                <p class="member-description">${member.description}</p>
+                                <div class="member-info">
+                                    <div class="info-item">
+                                        <span class="info-label">Kontribusi</span>
+                                        <span class="info-value">${member.contributions}</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Bergabung</span>
+                                        <span class="info-value">${member.yearJoined}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Initialize
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', renderTeam);
+        } else {
+            renderTeam();
+        }
+    </script>
+</body>
+</html>
